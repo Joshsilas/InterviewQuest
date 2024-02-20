@@ -3,13 +3,13 @@ import Player from "../Player/index.jsx";
 import Boss1 from "../Boss1/index.jsx";
 
 const GameScreen = () => {
-    const [bossHealth, setBossHealth] = useState(100);
+    const [bossInterest, setBossInterest] = useState(0);
     const [health, setHealth] = useState(10);
     const [charm, setCharm] = useState(10);
     const [isBossAttacking, setIsBossAttacking] = useState(false);
 
     const handlePlayerAttack = () => {
-        setBossHealth((prevHealth) => Math.max(0, prevHealth - 10));
+        setBossInterest((prevHealth) => Math.max(0, prevHealth + 10));
         setIsBossAttacking(true);
     };
     const handleBossAttack = () => {
@@ -18,17 +18,30 @@ const GameScreen = () => {
     };
 
     useEffect(() => {
-        if (bossHealth > 0 && isBossAttacking) {
+        if (bossInterest === 100) {
+            goodInterview();
+            setIsBossAttacking(false);
+            return;
+        }
+        if (bossInterest > 0 && isBossAttacking) {
             const bossAttackTimeout = setTimeout(() => {
                 handleBossAttack();
-            }, 1000); // Adjust the delay as needed
+            }, 1000);
             return () => clearTimeout(bossAttackTimeout);
         }
-    }, [bossHealth, isBossAttacking]);
+    }, [bossInterest, isBossAttacking]);
+
+    const goodInterview = () =>
+    {
+        if(bossInterest === 100)
+        {
+            alert("aced the interview")
+        }
+    }
 
     return (
         <div>
-            <Boss1 bossHealth={bossHealth}/>
+            <Boss1 bossInterest={bossInterest}/>
             <Player onAttack={handlePlayerAttack} health={health} charm={charm}/>
         </div>
     );
