@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PlayerActions from "../PlayerActions/index.jsx";
 
-const Player = ({ health, skills }) => {
+const Player = ({ morale, charm }) => {
+    const [health, setHealth] = useState(10);
+    const [skill, setSkill] = useState(10);
+
     return (
         <div className="player-container">
             <h2>Player</h2>
-            <p>Health: {health}</p>
-            <p>Skills: {skills}</p>
+            <p>Morale: {health}</p>
+            <p>Charm: {skill}</p>
             <PlayerActions />
         </div>
     );

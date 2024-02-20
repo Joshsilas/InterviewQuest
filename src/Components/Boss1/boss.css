@@ -2,3 +2,9 @@
     padding: 200px;
     background-color: #b0b0ec;
 }
+
+.boss1health{
+    background-color: red;
+    padding: 20px;
+    margin: 4px;
+}

@@ -6,7 +6,7 @@ const StoryScreen = () => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigate('/boss1');
+            navigate("/game/");
         }, 10000);
         return () => clearTimeout(timer);
     }, [navigate]);
