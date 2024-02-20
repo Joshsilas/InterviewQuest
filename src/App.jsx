@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import IntroScreen from "./Components/IntroScreen/index.jsx";
 
 function App() {
 
 
   return (
     <>
-        <h1>Job Hunt</h1>
-        <p>The Game</p>
-
+      <IntroScreen />
     </>
   )
 }
