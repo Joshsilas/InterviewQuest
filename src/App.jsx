@@ -6,7 +6,7 @@ import StoryScreen from "./Components/StoryScreen/index.jsx";
 import GameScreen from "./Components/GameScreen/index.jsx";
 
 function App() {
-    
+
   return (
     <>
         <BrowserRouter>
