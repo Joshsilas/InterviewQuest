@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Player from "../Player/index.jsx";
+import BossPowers from '../BossPowers/index.jsx';
 import './boss.css';
 
-const Boss1 = ({bossInterest}) => {
+const Boss1 = ({ bossInterest, onBossPowerUsed }) => {
 
     return (
         <div>
@@ -10,6 +10,7 @@ const Boss1 = ({bossInterest}) => {
                 <p>Recruiter Interest: {bossInterest}</p>
             </div>
             <div className="bossman"></div>
+
         </div>
     );
 };

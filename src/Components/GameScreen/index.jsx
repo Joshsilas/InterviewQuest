@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Player from "../Player/index.jsx";
 import Boss1 from "../Boss1/index.jsx";
+import BossPowers from "../BossPowers/index.jsx";
 
 const GameScreen = () => {
     const [bossInterest, setBossInterest] = useState(0);
-    const [health, setHealth] = useState(10);
+    const [playerHealth, setPlayerHealth] = useState(10);
     const [charm, setCharm] = useState(10);
     const [isBossAttacking, setIsBossAttacking] = useState(false);
 
@@ -12,37 +13,50 @@ const GameScreen = () => {
         setBossInterest((prevHealth) => Math.max(0, prevHealth + 10));
         setIsBossAttacking(true);
     };
+
     const handleBossAttack = () => {
-        setHealth((prevHealth) => Math.max(0, prevHealth - 1));
+        setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 1));
         setIsBossAttacking(false);
     };
 
-    useEffect(() => {
-        if (bossInterest === 100) {
-            goodInterview();
-            setIsBossAttacking(false);
-            return;
+    const handleBossPowerUsed = () => {
+        const shouldAttack = Math.random() < 0.5;
+        if (shouldAttack) {
+            if (bossInterest > 0 && isBossAttacking) {
+                const bossAttackTimeout = setTimeout(() => {
+                    handleBossAttack();
+                }, 1000);
+                return () => clearTimeout(bossAttackTimeout);
+            }
+        } else {
+            const powers = ['generic Question', 'yawn'];
+            const randomPower = powers[Math.floor(Math.random() * powers.length)];
+            switch (randomPower) {
+                case 'genericQuestion':
+                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 2));
+                    break;
+                case 'yawn':
+                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 4));
+                    break;
+                default:
+                    break;
+            }
+            if (bossInterest === 100) {
+                goodInterview();
+                setIsBossAttacking(false);
+            }
         }
-        if (bossInterest > 0 && isBossAttacking) {
-            const bossAttackTimeout = setTimeout(() => {
-                handleBossAttack();
-            }, 1000);
-            return () => clearTimeout(bossAttackTimeout);
-        }
-    }, [bossInterest, isBossAttacking]);
+    };
 
-    const goodInterview = () =>
-    {
-        if(bossInterest === 100)
-        {
-            alert("aced the interview")
-        }
-    }
+    const goodInterview = () => {
+        alert("Aced the interview");
+    };
 
     return (
         <div>
-            <Boss1 bossInterest={bossInterest}/>
-            <Player onAttack={handlePlayerAttack} health={health} charm={charm}/>
+            <Boss1 bossInterest={bossInterest} />
+            <BossPowers onBossPowerUsed={handleBossPowerUsed} />
+            <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} />
         </div>
     );
 };
