@@ -5,8 +5,8 @@ const PlayerActions = ({ onAttack, onUseSkill }) => {
 
     return (
         <div className="player-actions-container">
-            <Button onClick={onAttack} text={"Use Talk"}> </Button>
-            <Button onClick={onUseSkill} text={"Use Skill"} ></Button>
+            <Button onClick={onAttack} text={"Engage"}> </Button>
+            <Button onClick={onUseSkill} text={"Use Charm"} ></Button>
         </div>
     );
 };
