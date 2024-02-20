@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PlayerActions from "../PlayerActions/index.jsx";
+import './Player.css';
 
 const Player = ({onAttack, onUseSkill, health, charm}) => {
 
