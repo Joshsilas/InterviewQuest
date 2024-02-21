@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const BossPowers = ({ onBossPowerUsed }) => {
-    const powers = ['genericQuestion', 'yawn'];
+    const powers = ['generic Question', 'yawn'];
     const [selectedPower, setSelectedPower] = useState(null);
 
     useEffect(() => {
