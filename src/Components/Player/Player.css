@@ -8,5 +8,11 @@
     color: #fff;
     font-family: 'Courier New', monospace;
     text-align: center;
+    width: 50%;
 
+}
+
+.playerLayout{
+    display: flex;
+    justify-content: center;
 }

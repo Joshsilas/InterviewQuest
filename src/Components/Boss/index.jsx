@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './boss.css';
 
 const Boss = ({ bossInterest, onBossPowerUsed }) => {
-    // const healthBarWidth = `${bossInterest}%`;
-
-    // const healthBarStyle = {
-    //     backgroundColor: '#ff3333',
-    //     width: healthBarWidth,
-    //     padding: '10px',
-    //     border: '2px solid #990000',
-    //     borderRadius: '5px',
-    //     color: '#fff',
-    //     fontFamily: 'Courier New, monospace'
-    // };
+    const fillStyle = {
+        width: `${bossInterest}%`,
+    };
 
     return (
-        <div>
-            <div className="bossHealth" >
-                <p>Recruiter Interest: {bossInterest}</p>
+        <div className="BossLayout">
+            <div className="bossContainer">
+                <div className="bossHealth">
+                    <p className="interestText">Recruiter Interest: {bossInterest}</p>
+                    <div className="healthFill" style={fillStyle}> </div>
+                </div>
+                <div className="bossman"></div>
             </div>
-            <div className="bossman"></div>
-
         </div>
     );
 };
