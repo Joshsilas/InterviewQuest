@@ -7,7 +7,8 @@
     text-align: center;
     font-family: 'Courier New', monospace;
     background-image: url("/src/assets/recruiter.jpg");
-    background-size: cover;
+    background-size: cover; /* Cover the entire container without repeating */
+    background-repeat: no-repeat;
 }
 
 .bossContainer {

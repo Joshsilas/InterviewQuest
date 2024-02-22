@@ -1,8 +1,17 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
 .intro-screen {
     background-color: #f0f0f0;
     padding: 20px;
     text-align: center;
     color: black;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
 }
 
 .job-advertisement {
@@ -10,7 +19,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
+
 }
 
 .job-advertisement h2 {
