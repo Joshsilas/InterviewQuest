@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PlayerActions from "../PlayerActions/index.jsx";
 import './Player.css';
 
-const Player = ({onAttack, onUseSkill, health, charm}) => {
+const Player = ({onAttack, onUseSkill, health, charm, isBossAttacking}) => {
 
 
     return (
@@ -10,7 +10,7 @@ const Player = ({onAttack, onUseSkill, health, charm}) => {
             <h2>Hopeful Candidate</h2>
             <p>Confidence: {health}</p>
             <p>Charm: {charm}</p>
-            <PlayerActions onAttack={onAttack} onUseSkill={onUseSkill} />
+            <PlayerActions onAttack={onAttack} onUseSkill={onUseSkill} isBossAttacking={isBossAttacking}/>
         </div>
     );
 };

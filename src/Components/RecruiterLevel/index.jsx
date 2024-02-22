@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Player from "../Player/index.jsx";
-import Boss1 from "../Boss/index.jsx";
+import Boss from "../Boss/index.jsx";
 import './Recruiterlevel.css';
 
 const RecruiterLevel = () => {
@@ -34,7 +34,7 @@ const RecruiterLevel = () => {
                 console.log("Updated isBossAttacking:", !prevIsBossAttacking);
                 return !prevIsBossAttacking;
             });
-        }, 500);
+        }, 700);
 
 
         setTimeout(() => {
@@ -87,10 +87,11 @@ const RecruiterLevel = () => {
     }, [isBossAttacking]);
 
     return (
-        <div>
-            <Boss1 bossInterest={bossInterest} />
-            {isBossAttacking && <p>The Recruiter: {selectedPower}</p>}
-            <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} />
+        <div className="recruiterLevel">
+            <Boss bossInterest={bossInterest} />
+            {isBossAttacking ? null : <p className="boss-powers">The Recruiter is watching you...</p>}
+            {isBossAttacking && <p className="boss-powers">The Recruiter {selectedPower}</p>}
+            <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} disabled={isBossAttacking} />
         </div>
     );
 };

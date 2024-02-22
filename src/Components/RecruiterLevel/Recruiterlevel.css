@@ -17,32 +17,9 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-
-
-.player-info span {
-    font-size: 18px;
-}
-
-.boss-info {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.boss-interest-bar {
-    height: 20px;
-    background-color: #3498db;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    overflow: hidden;
-}
-
-.boss-interest-fill {
-    height: 100%;
-    background-color: #e74c3c;
-}
-
 .boss-powers {
     text-align: center;
+    font-weight: bold;
 }
 
 .player-actions {
@@ -51,22 +28,6 @@ body {
     margin-top: 20px;
 }
 
-.player-actions button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #2ecc71;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
 .player-actions button:hover {
     background-color: #27ae60;
-}
-
-.player-status {
-    text-align: center;
-    margin-top: 20px;
 }
