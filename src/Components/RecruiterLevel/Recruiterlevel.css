@@ -2,7 +2,7 @@ body {
     background-color: #222;
     color: #fff;
     font-family: 'Arial', sans-serif;
-    height: 100vh;
+    height: 150vh;
     margin: 0;
 }
 
@@ -28,8 +28,10 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+
 }
 
 .player-actions button:hover {
     background-color: #27ae60;
 }
+

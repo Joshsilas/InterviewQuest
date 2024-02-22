@@ -17,21 +17,51 @@ const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking }) => {
     };
 
     const handleUseSkill = (selectedSkill) => {
-        onUseSkill(selectedSkill);
+        switch (selectedSkill.name) {
+            case 'Think about your answer - 3 Charm':
+                onUseSkill(selectedSkill);
+                // Deplete 3 charm and affect the boss accordingly
+                // You can implement the logic to affect the boss based on this case
+                console.log('Thinking about the answer!');
+                break;
+
+            case 'FACTS AND FIGURES - 4 charm':
+                onUseSkill(selectedSkill);
+                // Deplete 4 charm and affect the boss accordingly
+                console.log('Impressing with facts and figures!');
+                break;
+
+            case 'The Ultimate answer - 8 charm':
+                onUseSkill(selectedSkill);
+                // Deplete 8 charm and affect the boss accordingly
+                console.log('Unleashing the ultimate answer!');
+                break;
+
+            case 'Boost your confidence - 3 charm':
+                onUseSkill(selectedSkill);
+                // Deplete 3 charm and affect the boss accordingly
+                // You can implement the logic to affect the boss based on this case
+                console.log('Boosting confidence!');
+                break;
+
+            default:
+                console.log('Unknown skill');
+        }
+
         handleToggleCharmMenu();
     };
 
     const handleAttack = () => {
         onAttack();
-        setIsCharmMenuOpen(false); // Close charm menu on attack
+        setIsCharmMenuOpen(false);
     };
 
     return (
         <div className="player-actions">
             {!isCharmMenuOpen && (
                 <>
-                    <Button onClick={handleAttack} text={"Engage"}  disabled={disabled} />
-                    <Button onClick={handleToggleCharmMenu} text={"Use Charm"} disabled={disabled} />
+                    <Button className={"mainButtons"} onClick={handleAttack} text={"Engage"}  disabled={disabled} />
+                    <Button className={"mainButtons"} onClick={handleToggleCharmMenu} text={"Use Charm"} disabled={disabled} />
                 </>
             )}
 
