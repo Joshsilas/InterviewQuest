@@ -5,7 +5,7 @@ const Boss1 = ({ bossInterest, onBossPowerUsed }) => {
 
     return (
         <div>
-            <div className="boss1health">
+            <div className="bossHealth">
                 <p>Recruiter Interest: {bossInterest}</p>
             </div>
             <div className="bossman"></div>

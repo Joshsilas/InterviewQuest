@@ -1,10 +1,19 @@
-.bossman{
-    padding: 100px;
+.bossman {
+    padding: 20px;
     background-color: #b0b0ec;
+    border: 4px solid #4d4dff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: 'Courier New', monospace;
 }
 
-.boss1health{
-    background-color: red;
-    padding: 20px;
+.bossHealth {
+    background-color: #ff3333;
+    padding: 10px;
     margin: 4px;
+    border: 2px solid #990000;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
 }

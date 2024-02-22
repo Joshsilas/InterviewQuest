@@ -7,7 +7,7 @@ const Player = ({onAttack, onUseSkill, health, charm}) => {
 
     return (
         <div className="player-container">
-            <h2>Player</h2>
+            <h2>Hopeful Candidate</h2>
             <p>Confidence: {health}</p>
             <p>Charm: {charm}</p>
             <PlayerActions onAttack={onAttack} onUseSkill={onUseSkill} />
