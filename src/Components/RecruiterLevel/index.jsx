@@ -35,13 +35,10 @@ const RecruiterLevel = () => {
                 return !prevIsBossAttacking;
             });
         }, 700);
+    }
 
 
-        setTimeout(() => {
-            console.log("After player attack - bossInterest:", bossInterest);
-            console.log("player attacked");
-        }, 1000);
-    };
+
 
     const handleBossPowerUsed = () => {
         const randomPower = powers[Math.floor(Math.random() * powers.length)];
