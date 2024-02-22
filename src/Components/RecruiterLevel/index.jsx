@@ -34,7 +34,7 @@ const RecruiterLevel = () => {
                 console.log("Updated isBossAttacking:", !prevIsBossAttacking);
                 return !prevIsBossAttacking;
             });
-        }, 1000);
+        }, 500);
     }
 
     const handleBossPowerUsed = () => {
