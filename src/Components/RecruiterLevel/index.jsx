@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Player from "../Player/index.jsx";
 import Boss from "../Boss/index.jsx";
 import './Recruiterlevel.css';
+import Button from "../Button/index.jsx";
 
 const RecruiterLevel = () => {
     const [bossInterest, setBossInterest] = useState(0);
@@ -28,17 +29,13 @@ const RecruiterLevel = () => {
             console.log("Updated bossInterest:", newInterest);
             return newInterest;
         });
-
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => {
                 console.log("Updated isBossAttacking:", !prevIsBossAttacking);
                 return !prevIsBossAttacking;
             });
-        }, 700);
+        }, 1000);
     }
-
-
-
 
     const handleBossPowerUsed = () => {
         const randomPower = powers[Math.floor(Math.random() * powers.length)];
@@ -67,7 +64,7 @@ const RecruiterLevel = () => {
 
         setTimeout(() => {
             setIsBossAttacking(false);
-        }, 1500);
+        }, 3000);
     };
 
     const goodInterview = () => {
@@ -88,7 +85,7 @@ const RecruiterLevel = () => {
             <Boss bossInterest={bossInterest} />
             {isBossAttacking ? null : <p className="boss-powers">The Recruiter is watching you...</p>}
             {isBossAttacking && <p className="boss-powers">The Recruiter {selectedPower}</p>}
-            <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} disabled={isBossAttacking} />
+            <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} isBossAttacking={isBossAttacking} />
         </div>
     );
 };

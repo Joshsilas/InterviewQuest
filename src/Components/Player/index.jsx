@@ -11,7 +11,7 @@ const Player = ({onAttack, onUseSkill, health, charm, isBossAttacking}) => {
             <h2>Hopeful Candidate</h2>
             <p>Confidence: {health}</p>
             <p>Charm: {charm}</p>
-            <PlayerActions onAttack={onAttack} onUseSkill={onUseSkill} isBossAttacking={isBossAttacking}/>
+            <PlayerActions onAttack={onAttack} onUseSkill={onUseSkill} disabled={isBossAttacking}/>
             </div>
         </div>
     );
