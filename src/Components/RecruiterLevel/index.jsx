@@ -11,7 +11,8 @@ const RecruiterLevel = () => {
     const [isBossAttacking, setIsBossAttacking] = useState(false);
     const [selectedPower, setSelectedPower] = useState(null);
 
-    const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', "Seems Interested"];
+    const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', 'Seems Interested'];
+    const charmSkills = ['Skill 1', 'Skill 2', 'Skill 3'];
 
     useEffect(() => {
         if (playerHealth === 0) {
@@ -29,6 +30,7 @@ const RecruiterLevel = () => {
             console.log("Updated bossInterest:", newInterest);
             return newInterest;
         });
+
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => {
                 console.log("Updated isBossAttacking:", !prevIsBossAttacking);
@@ -36,6 +38,12 @@ const RecruiterLevel = () => {
             });
         }, 500);
     }
+
+    const handleUseCharmSkill = (selectedSkill) => {
+        console.log(`Charm Skill Used: ${selectedSkill}`);
+        // Add logic here to handle the selected charm skill
+        // You can update player stats, affect boss, etc.
+    };
 
     const handleBossPowerUsed = () => {
         const randomPower = powers[Math.floor(Math.random() * powers.length)];
@@ -70,6 +78,7 @@ const RecruiterLevel = () => {
     const goodInterview = () => {
         alert("Aced the interview");
     };
+
     const badInterview = () => {
         alert("Failed the interview");
     };
@@ -82,10 +91,10 @@ const RecruiterLevel = () => {
 
     return (
         <div className="recruiterLevel">
-            <Boss bossInterest={bossInterest} />
+            <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} />
             {isBossAttacking ? null : <p className="boss-powers">The Recruiter is watching you...</p>}
             {isBossAttacking && <p className="boss-powers">The Recruiter {selectedPower}</p>}
-            <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} isBossAttacking={isBossAttacking} />
+            <Player onAttack={handlePlayerAttack} onUseSkill={handleUseCharmSkill} health={playerHealth} charm={charm} isBossAttacking={isBossAttacking} />
         </div>
     );
 };

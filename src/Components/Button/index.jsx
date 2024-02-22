@@ -1,12 +1,16 @@
 
 
-const Button = ({className, text, onClick, disabled}) => {
+const Button = ({ onClick, text, disabled, className, 'data-hover-message': hoverMessage }) => {
     return (
-        <>
-            <button className={className} type='submit' onClick={onClick} disabled={disabled}>
-                {text}
-            </button>
-        </>
-    )
-}
-export default Button
+        <button
+            className={`custom-button ${className}`}
+            onClick={onClick}
+            disabled={disabled}
+            data-hover-message={hoverMessage}
+        >
+            {text}
+        </button>
+    );
+};
+
+export default Button;

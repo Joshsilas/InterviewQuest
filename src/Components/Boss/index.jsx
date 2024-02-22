@@ -1,7 +1,7 @@
 import React from 'react';
 import './boss.css';
 
-const Boss = ({ bossInterest, onBossPowerUsed }) => {
+const Boss = ({ bossInterest, bossName  }) => {
     const fillStyle = {
         width: `${bossInterest}%`,
     };
@@ -10,7 +10,7 @@ const Boss = ({ bossInterest, onBossPowerUsed }) => {
         <div className="BossLayout">
             <div className="bossContainer">
                 <div className="bossHealth">
-                    <p className="interestText">Recruiter Interest: {bossInterest}</p>
+                    <p className="interestText"> {bossName} {bossInterest}</p>
                     <div className="healthFill" style={fillStyle}> </div>
                 </div>
                 <div className="bossman"></div>

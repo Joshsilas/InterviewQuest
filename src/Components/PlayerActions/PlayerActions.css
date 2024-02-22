@@ -9,3 +9,34 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
+.charm-skill-button {
+    position: relative;
+}
+
+.charm-skill-button::after {
+    content: attr(data-hover-message);
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 5;
+}
+
+.charm-skill-button:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.attackButton:hover::after {
+    background-color: #2ecc71;
+}
