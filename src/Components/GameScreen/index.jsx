@@ -29,8 +29,6 @@ const GameScreen = () => {
             return newInterest;
         });
 
-
-        // Delay setting isBossAttacking for 500 milliseconds
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => {
                 console.log("Updated isBossAttacking:", !prevIsBossAttacking);
@@ -91,7 +89,7 @@ const GameScreen = () => {
     return (
         <div>
             <Boss1 bossInterest={bossInterest} />
-            <p>The Recruiter: {selectedPower}</p>
+            {isBossAttacking && <p>The Recruiter: {selectedPower}</p>}
             <Player onAttack={handlePlayerAttack} health={playerHealth} charm={charm} />
         </div>
     );
