@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Player from "../Player/index.jsx";
-import Boss1 from "../Boss1/index.jsx";
-import './GameScreen.css';
+import Boss1 from "../Boss/index.jsx";
+import './Recruiterlevel.css';
 
-const GameScreen = () => {
+const RecruiterLevel = () => {
     const [bossInterest, setBossInterest] = useState(0);
     const [playerHealth, setPlayerHealth] = useState(10);
     const [charm, setCharm] = useState(10);
@@ -95,4 +95,4 @@ const GameScreen = () => {
     );
 };
 
-export default GameScreen;
+export default RecruiterLevel;
