@@ -40,30 +40,35 @@ const RecruiterLevel = () => {
         console.log('RecruiterLevel - Selected Skill:', selectedSkill);
         switch (selectedSkill.name) {
             case 'Think about your answer - 3 Charm':
-                setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 2));
-                setPowerText("You've gained 2 confidence");
+                setCharm((prevCharm) => Math.max(0, prevCharm - 3));
+                setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
                 console.log('Thinking about the answer!');
                 break;
-
             case 'FACTS AND FIGURES - 4 charm':
-                // Implement logic to deplete 4 charm and affect the boss accordingly
+                setCharm((prevCharm) => Math.max(0, prevCharm - 4));
+                setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
                 console.log('Impressing with facts and figures!');
                 break;
 
             case 'The Ultimate answer - 8 charm':
-                // Implement logic to deplete 8 charm and affect the boss accordingly
+                setCharm((prevCharm) => Math.max(0, prevCharm - 8));
+                setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
                 console.log('Unleashing the ultimate answer!');
                 break;
 
             case 'Boost your confidence - 3 charm':
-                // Implement logic to deplete 3 charm and affect the boss accordingly
+                setCharm((prevCharm) => Math.max(0, prevCharm - 3));
+                setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
                 console.log('Boosting confidence!');
                 break;
 
             default:
                 console.log('Unknown skill');
-        }
-    };
+    } setTimeout(() => {
+            setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
+    }, 1000); // Adjust the delay time (in milliseconds) as needed
+};
+
 
     const handleBossPowerUsed = () => {
         const randomPower = powers[Math.floor(Math.random() * powers.length)];
