@@ -18,6 +18,7 @@ const RecruiterLevel = () => {
         { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 10' },
     ];
     const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', 'Seems Interested'];
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         if (playerHealth === 0) {
@@ -37,36 +38,80 @@ const RecruiterLevel = () => {
     }
 
     const handleUseSkill = (selectedSkill) => {
-        console.log('RecruiterLevel - Selected Skill:', selectedSkill);
+        if (selectedSkill.name.includes('charm') && charm === 0) {
+            setErrorMessage('Not enough charm to use this skill!');
+            console.log('Not enough charm to use this skill!');
+            setTimeout(() => {
+                setErrorMessage(""); // Clear the error message after 5 seconds
+            }, 1000);
+            return;
+        }
+
         switch (selectedSkill.name) {
             case 'Think about your answer - 3 Charm':
-                setCharm((prevCharm) => Math.max(0, prevCharm - 3));
-                setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
-                console.log('Thinking about the answer!');
+                if (charm >= 3) {
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 3));
+                    setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
+                    console.log('Thinking about the answer!');
+                } else {
+                    setIsBossAttacking(false);
+                    setErrorMessage('Not enough charm to use this skill!');
+                    setTimeout(() => {
+                        setErrorMessage("");
+                    }, 1000)
+                    return;
+                }
                 break;
             case 'FACTS AND FIGURES - 4 charm':
+                if (charm >= 4) {
                 setCharm((prevCharm) => Math.max(0, prevCharm - 4));
                 setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
                 console.log('Impressing with facts and figures!');
+                } else {
+                    setIsBossAttacking(false);
+                    setErrorMessage('Not enough charm to use this skill!');
+                    setTimeout(() => {
+                        setErrorMessage("");
+                    }, 1000)
+                    return;
+                }
                 break;
-
             case 'The Ultimate answer - 8 charm':
+                if (charm >= 8) {
                 setCharm((prevCharm) => Math.max(0, prevCharm - 8));
                 setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
                 console.log('Unleashing the ultimate answer!');
+                } else {
+                    setIsBossAttacking(false);
+                    setErrorMessage('Not enough charm to use this skill!');
+                    setTimeout(() => {
+                        setErrorMessage("");
+                    }, 1000)
+                    return;
+                }
                 break;
 
             case 'Boost your confidence - 3 charm':
+                if (charm >= 3) {
                 setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
                 console.log('Boosting confidence!');
+                } else {
+                    setIsBossAttacking(false);
+                    setErrorMessage('Not enough charm to use this skill!');
+                    setTimeout(() => {
+                        setErrorMessage("");
+                    }, 1000)
+                    return;
+                }
                 break;
-
             default:
                 console.log('Unknown skill');
     } setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
-    }, 1000); // Adjust the delay time (in milliseconds) as needed
+
+    }, 1000);
+        setErrorMessage("");
 };
 
 
@@ -122,6 +167,7 @@ const RecruiterLevel = () => {
             </div>
             <div className="boss-powers-layout">
                 {isBossAttacking ? null : <p className="boss-powers">The Recruiter is watching you...</p>}
+                {errorMessage && <p className="boss-powers">{errorMessage}</p>}
                 {isBossAttacking && <p className="boss-powers">The Recruiter {selectedPower}</p>}
                 {isBossAttacking && <p className="boss-powers">{powerText}</p>}
             </div>
