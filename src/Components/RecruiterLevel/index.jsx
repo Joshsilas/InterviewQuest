@@ -28,6 +28,7 @@ const RecruiterLevel = () => {
     const playSound = () => {
         if (audioElement.paused) {
             audioElement.play().catch(error => {
+                // Handle play error, if any
                 console.error('Error playing audio:', error);
             });
         }

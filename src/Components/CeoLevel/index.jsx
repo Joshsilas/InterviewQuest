@@ -22,6 +22,7 @@ const CeoLevel = () => {
     ];
     const powers = ['stares into your soul', 'looks you up and down', "interrupts you", 'expresses doubt about your qualifications', 'almost smiles', 'interrupts the interview to take a phone call', "tries to wrap up the interview early"];
     const [errorMessage, setErrorMessage] = useState("");
+
     const audioElement = new Audio(soundClip);
     audioElement.loop = true;
 
@@ -31,7 +32,6 @@ const CeoLevel = () => {
     useEffect(() => {
         playSound();
         return () => {
-
             audioElement.pause();
             audioElement.currentTime = 0;
         };
