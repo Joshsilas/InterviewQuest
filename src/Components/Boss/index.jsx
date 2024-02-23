@@ -13,7 +13,7 @@ const Boss = ({ bossInterest, bossName  }) => {
                     <p className="interestText"> {bossName} {bossInterest}</p>
                     <div className="healthFill" style={fillStyle}> </div>
                 </div>
-                <div className="bossman"></div>
+
             </div>
         </div>
     );

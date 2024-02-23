@@ -10,6 +10,7 @@ const RecruiterLevel = () => {
     const [charm, setCharm] = useState(10);
     const [isBossAttacking, setIsBossAttacking] = useState(false);
     const [selectedPower, setSelectedPower] = useState(null);
+    const [powerText, setPowerText] = useState("");
 
     const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', 'Seems Interested'];
     const charmSkills = ['Skill 1', 'Skill 2', 'Skill 3'];
@@ -52,19 +53,19 @@ const RecruiterLevel = () => {
         switch (randomPower) {
             case 'Asks you a generic Question':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 1));
-                console.log("generic question used");
-                break;
+                setPowerText("You've lost 1 confidence");
+            break;
             case 'Yawns':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 3));
-                console.log("Yawn used");
+                setPowerText("You've lost 3 confidence");
                 break;
             case 'Stares blankly':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 2));
-                console.log("hmmm used");
+                setPowerText("You've lost 2 confidence");
                 break;
             case 'Seems Interested':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 2));
-                console.log("hmmm used");
+                setPowerText("You've gained 2 confidence");
                 break;
             default:
                 break;
@@ -90,12 +91,18 @@ const RecruiterLevel = () => {
     }, [isBossAttacking]);
 
     return (
-        <div className="recruiterLevel">
+        <>
             <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} />
+            <div className="recruiterLevel">
+            <img className="bossImage" src ="/src/assets/recruiter.jpg" />
+        </div >
+            <div className="boss-powers-layout">
             {isBossAttacking ? null : <p className="boss-powers">The Recruiter is watching you...</p>}
             {isBossAttacking && <p className="boss-powers">The Recruiter {selectedPower}</p>}
+            {isBossAttacking && <p className="boss-powers">{powerText}</p>}
+                </div>
             <Player onAttack={handlePlayerAttack} onUseSkill={handleUseCharmSkill} health={playerHealth} charm={charm} isBossAttacking={isBossAttacking} />
-        </div>
+    </>
     );
 };
 

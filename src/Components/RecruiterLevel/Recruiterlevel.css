@@ -2,19 +2,24 @@ body {
     background-color: #222;
     color: #fff;
     font-family: 'Arial', sans-serif;
-    height: 150vh;
+    height: 100vh;
     margin: 0;
 }
-
-.game-container {
-    border: 2px solid #fff;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #333;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-    max-width: 600px;
-    width: 100%;
-    overflow: hidden;
+.bossImage{
+    background-color: #b0b0ec;
+    border: 4px solid #4d4dff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    object-fit: contain;
+    max-width: 400px; /* set the maximum width */
+    max-height: 300px; /* set the maximum height */
+}
+.recruiterLevel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .boss-powers {
@@ -23,6 +28,11 @@ body {
     font-size: 1rem;
 
 }
+.boss-powers-layout {
+    position: relative;
+    height: 60px;
+}
+
 
 .player-actions {
     display: flex;
