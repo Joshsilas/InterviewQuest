@@ -7,6 +7,8 @@ import RecruiterLevel from "./Components/RecruiterLevel/index.jsx";
 import FailedInterview from "./Components/FailedInterview/index.jsx";
 import IntroToCto from "./Components/IntroToCto/index.jsx";
 import CtoLevel from "./Components/CtoLevel/index.jsx";
+import IntroToCeo from "./Components/IntroToCeo/index.jsx";
+import CeoLevel from "./Components/CeoLevel/index.jsx";
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
                 <Route path="/failedInterview/" element={<FailedInterview/>} />
                 <Route path="/IntroToCto/" element={<IntroToCto/>} />
                 <Route path="/CtoLevel/" element={<CtoLevel/>} />
+                <Route path="/IntroToCeo/" element={<IntroToCeo/>} />
+                <Route path="/CeoLevel/" element={<CeoLevel/>} />
                 </Routes>
              </BrowserRouter>
     </>
