@@ -3,6 +3,7 @@ import Player from "../Player/index.jsx";
 import Boss from "../Boss/index.jsx";
 import './Recruiterlevel.css';
 import {useNavigate} from "react-router-dom";
+import soundClip from '/src/assets/officesound.mp3';
 
 const RecruiterLevel = () => {
     const navigate = useNavigate();
@@ -21,6 +22,22 @@ const RecruiterLevel = () => {
     ];
     const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', 'Seems Interested'];
     const [errorMessage, setErrorMessage] = useState("");
+
+    const audioElement = new Audio(soundClip);
+    audioElement.loop = true;
+
+    // Function to play the sound
+    const playSound = () => {
+        audioElement.play();
+    };
+    useEffect(() => {
+        playSound();
+        return () => {
+            // Cleanup on component unmount
+            audioElement.pause();
+            audioElement.currentTime = 0;
+        };
+    }, []);
 
     useEffect(() => {
         if (playerHealth === 0) {
