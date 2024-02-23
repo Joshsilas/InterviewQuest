@@ -14,10 +14,10 @@ const CtoLevel = () => {
     const [selectedPower, setSelectedPower] = useState(null);
     const [powerText, setPowerText] = useState("");
     const charmSkills = [
-        { name: 'Think about your answer - 2 Charm', description: 'Take a moment to formulate a thoughtful response. Raise interest by 20' },
-        { name: 'FACTS AND FIGURES - 4 charm', description: 'Impress them with relevant facts and figures. Raise interest by 30' },
-        { name: 'The Ultimate answer - 8 charm', description: 'Unleash the ultimate answer to captivate them. Raise interest by 60' },
-        { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 10' },
+        { name: 'Bug Squashing - 3 Charm', description: 'You know how to debug that. Raise interest by 30' },
+        { name: 'In-Depth Technical Explanation - 4 charm', description: 'Provide an in-depth explanation of a technical concept. Raise interest by 40' },
+        { name: 'Complex Algorithm - 10 charm', description: "Bodmas, loops, recursion, data structures, and optimization techniques. You've got this . Raise interest by 80" },
+        { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 15' },
     ];
     const powers = ['shouts Fizz Buzz at you', 'asks why you did it in React', "says you've missed a semi colon", 'affirms with a thoughtful nod', 'just shakes their head'];
     const [errorMessage, setErrorMessage] = useState("");
@@ -32,7 +32,7 @@ const CtoLevel = () => {
     }, [playerHealth, bossInterest]);
 
     const handlePlayerAttack = () => {
-        setBossInterest((prevInterest) => Math.min(300, prevInterest + 10));
+        setBossInterest((prevInterest) => Math.min(300, prevInterest + 15));
 
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
@@ -48,22 +48,9 @@ const CtoLevel = () => {
             return;
         }
         switch (selectedSkill.name) {
-            case 'Think about your answer - 2 Charm':
-                if (charm >= 2) {
-                    setCharm((prevCharm) => Math.max(0, prevCharm - 2));
-                    setBossInterest((prevInterest) => Math.min(300, prevInterest + 20));
-                } else {
-                    setIsBossAttacking(false);
-                    setErrorMessage('Not enough charm to use this skill!');
-                    setTimeout(() => {
-                        setErrorMessage("");
-                    }, 1000)
-                    return;
-                }
-                break;
-            case 'FACTS AND FIGURES - 4 charm':
-                if (charm >= 4) {
-                    setCharm((prevCharm) => Math.max(0, prevCharm - 4));
+            case 'Bug Squashing - 3 Charm':
+                if (charm >= 3) {
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                     setBossInterest((prevInterest) => Math.min(300, prevInterest + 30));
                 } else {
                     setIsBossAttacking(false);
@@ -74,10 +61,10 @@ const CtoLevel = () => {
                     return;
                 }
                 break;
-            case 'The Ultimate answer - 8 charm':
-                if (charm >= 8) {
-                    setCharm((prevCharm) => Math.max(0, prevCharm - 8));
-                    setBossInterest((prevInterest) => Math.min(300, prevInterest + 60));
+            case 'In-Depth Technical Explanation - 4 charm':
+                if (charm >= 4) {
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 4));
+                    setBossInterest((prevInterest) => Math.min(300, prevInterest + 40));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -87,11 +74,23 @@ const CtoLevel = () => {
                     return;
                 }
                 break;
-
+            case 'Complex Algorithm - 10 charm':
+                if (charm >= 10) {
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 10));
+                    setBossInterest((prevInterest) => Math.min(300, prevInterest + 80));
+                } else {
+                    setIsBossAttacking(false);
+                    setErrorMessage('Not enough charm to use this skill!');
+                    setTimeout(() => {
+                        setErrorMessage("");
+                    }, 1000)
+                    return;
+                }
+                break;
             case 'Boost your confidence - 3 charm':
                 if (charm >= 3) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
-                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
+                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 15));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -147,7 +146,7 @@ const CtoLevel = () => {
     const goodInterview = () => {
         setIsBossAttacking(false);
         setTimeout(() => {
-            navigate("/IntroToCto/");
+            navigate("/IntroToCeo/");
         }, 2000);
     };
 
@@ -168,7 +167,7 @@ const CtoLevel = () => {
         <>
             <Boss bossName={"CTO Interest:"} bossInterest={bossInterest} maxInterest={300} />
             <div className="recruiterLevel">
-                <img className="bossImage" src="/src/assets/recruiter.jpg" />
+                <img className="bossImage" src="/src/assets/softwaredev.jpg" />
             </div>
             <div className="boss-powers-layout">
                 {isBossAttacking ? null : <p className="boss-powers">The CTO is inspecting you...</p>}

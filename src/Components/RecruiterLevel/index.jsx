@@ -51,7 +51,7 @@ const RecruiterLevel = () => {
         switch (selectedSkill.name) {
             case 'Think about your answer - 3 Charm':
                 if (charm >= 2) {
-                    setCharm((prevCharm) => Math.max(0, prevCharm - 2));
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                     setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
                 } else {
                     setIsBossAttacking(false);

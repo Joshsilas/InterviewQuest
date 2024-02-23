@@ -14,9 +14,12 @@ const IntroToCto = () => {
     return (
         <div>
             <p>You Passed the first stage</p>
-            <p>Your now a strong canidate</p>
-            <p>Confidence plus 10</p>
-            <p>Charm plus 10</p>
+            <p>Your now a strong candidate</p>
+            <p>Your now having a technical interview, time to change up your charm</p>
+            <p>Engagement plus 5</p>
+            <p>Confidence plus 20</p>
+            <p>Charm plus 20</p>
+
         </div>
     );
 };
