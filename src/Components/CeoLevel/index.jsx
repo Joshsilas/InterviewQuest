@@ -14,10 +14,10 @@ const CeoLevel = () => {
     const [selectedPower, setSelectedPower] = useState(null);
     const [powerText, setPowerText] = useState("");
     const charmSkills = [
-        { name: 'Bug Squashing - 3 Charm', description: 'You know how to debug that. Raise interest by 30' },
-        { name: 'In-Depth Technical Explanation - 4 charm', description: 'Provide an in-depth explanation of a technical concept. Raise interest by 40' },
-        { name: 'Complex Algorithm - 10 charm', description: "Bodmas, loops, recursion, data structures, and optimization techniques. You've got this . Raise interest by 80" },
-        { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 15' },
+        { name: 'You Speak from experience - 3 Charm', description: 'All these interviews, you know the answer. Raise interest by 40' },
+        { name: 'Candidate of Destiny - 30 Charm', description: "As the Candidate of Destiny, you impress the CEO, restoring 25 confidence, raise interest by 150, and leaving a lasting positive impression." },
+        { name: 'Visionary Leadership  - 5 charm', description: 'Showcase visionary leadership skills that steer the company toward unparalleled success. Raise interest by 60' },
+        { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 20' },
     ];
     const powers = ['stares into your soul', 'looks you up and down', "interrupts you", 'expresses doubt about your qualifications', 'almost smiles', 'interrupts the interview to take a phone call', "tries to wrap up the interview early"];
     const [errorMessage, setErrorMessage] = useState("");
@@ -48,22 +48,9 @@ const CeoLevel = () => {
             return;
         }
         switch (selectedSkill.name) {
-            case 'Bug Squashing - 3 Charm':
+            case 'You Speak from experience - 3 Charm':
                 if (charm >= 3) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
-                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 30));
-                } else {
-                    setIsBossAttacking(false);
-                    setErrorMessage('Not enough charm to use this skill!');
-                    setTimeout(() => {
-                        setErrorMessage("");
-                    }, 1000)
-                    return;
-                }
-                break;
-            case 'In-Depth Technical Explanation - 4 charm':
-                if (charm >= 4) {
-                    setCharm((prevCharm) => Math.max(0, prevCharm - 4));
                     setBossInterest((prevInterest) => Math.min(500, prevInterest + 40));
                 } else {
                     setIsBossAttacking(false);
@@ -74,10 +61,24 @@ const CeoLevel = () => {
                     return;
                 }
                 break;
-            case 'Complex Algorithm - 10 charm':
-                if (charm >= 10) {
-                    setCharm((prevCharm) => Math.max(0, prevCharm - 10));
-                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 80));
+            case 'Candidate of Destiny - 30 Charm':
+                if (charm >= 30) {
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 30));
+                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 150));
+                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 25));
+                } else {
+                    setIsBossAttacking(false);
+                    setErrorMessage('Not enough charm to use this skill!');
+                    setTimeout(() => {
+                        setErrorMessage("");
+                    }, 1000)
+                    return;
+                }
+                break;
+            case 'Visionary Leadership  - 5 charm':
+                if (charm >= 5) {
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 5));
+                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 60));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -90,7 +91,7 @@ const CeoLevel = () => {
             case 'Boost your confidence - 3 charm':
                 if (charm >= 3) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
-                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 15));
+                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 20));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -118,6 +119,10 @@ const CeoLevel = () => {
                 setPowerText("You've lost 10 confidence");
                 break;
             case 'looks you up and down':
+                if (charm <= 0) {
+                    setPowerText("The boss refrains from judging you, as you have no charm left!");
+                    break;
+                }
                 setCharm((prevCharm) => Math.max(0, prevCharm - 5));
                 setPowerText("You've lost 5 charm");
                 break;
