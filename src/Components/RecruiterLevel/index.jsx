@@ -40,7 +40,6 @@ const RecruiterLevel = () => {
     const handleUseSkill = (selectedSkill) => {
         if (selectedSkill.name.includes('charm') && charm === 0) {
             setErrorMessage('Not enough charm to use this skill!');
-            console.log('Not enough charm to use this skill!');
             setTimeout(() => {
                 setErrorMessage(""); // Clear the error message after 5 seconds
             }, 1000);
@@ -52,7 +51,6 @@ const RecruiterLevel = () => {
                 if (charm >= 3) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                     setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
-                    console.log('Thinking about the answer!');
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -66,7 +64,6 @@ const RecruiterLevel = () => {
                 if (charm >= 4) {
                 setCharm((prevCharm) => Math.max(0, prevCharm - 4));
                 setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
-                console.log('Impressing with facts and figures!');
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -80,7 +77,6 @@ const RecruiterLevel = () => {
                 if (charm >= 8) {
                 setCharm((prevCharm) => Math.max(0, prevCharm - 8));
                 setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
-                console.log('Unleashing the ultimate answer!');
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -95,7 +91,6 @@ const RecruiterLevel = () => {
                 if (charm >= 3) {
                 setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
-                console.log('Boosting confidence!');
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -106,7 +101,6 @@ const RecruiterLevel = () => {
                 }
                 break;
             default:
-                console.log('Unknown skill');
     } setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
 

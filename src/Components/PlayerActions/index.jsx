@@ -16,7 +16,6 @@ const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmS
     };
 
     const handleUseSkill = (skill) => {
-        console.log('Selected Skill:', skill);
         setSelectedSkill(skill);
         onUseSkill(skill);
         setIsCharmMenuOpen(false);
