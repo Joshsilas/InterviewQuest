@@ -163,7 +163,7 @@ const RecruiterLevel = () => {
 
     return (
         <>
-            <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} />
+            <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} maxInterest={100}/>
             <div className="recruiterLevel">
                 <img className="bossImage" src="/src/assets/recruiter.jpg" />
             </div>

@@ -10,6 +10,10 @@ const IntroScreen = () => {
         navigate('/StoryPage/');
     };
 
+    const realLife = () => {
+        navigate('/failedInterview/');
+    }
+
     return (
         <div className="intro-screen">
             <h1>Job Hunt: The Game</h1>
@@ -30,6 +34,7 @@ const IntroScreen = () => {
                    <p> Good Luck!</p>
                 <Button onClick={begin} text={'Apply Now'} />
             </div>
+            <Button onClick={realLife} text={'Real Life Mode'} />
         </div>
     );
 };

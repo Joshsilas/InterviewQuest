@@ -32,7 +32,7 @@ const CtoLevel = () => {
     }, [playerHealth, bossInterest]);
 
     const handlePlayerAttack = () => {
-        setBossInterest((prevInterest) => Math.min(100, prevInterest + 10));
+        setBossInterest((prevInterest) => Math.min(500, prevInterest + 15));
 
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
@@ -43,16 +43,15 @@ const CtoLevel = () => {
         if (selectedSkill.name.includes('charm') && charm === 0) {
             setErrorMessage('Not enough charm to use this skill!');
             setTimeout(() => {
-                setErrorMessage(""); // Clear the error message after 5 seconds
+                setErrorMessage("");
             }, 1000);
             return;
         }
-
         switch (selectedSkill.name) {
             case 'Think about your answer - 3 Charm':
                 if (charm >= 3) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
-                    setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
+                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 20));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -65,7 +64,7 @@ const CtoLevel = () => {
             case 'FACTS AND FIGURES - 4 charm':
                 if (charm >= 4) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 4));
-                    setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
+                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 30));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -78,7 +77,7 @@ const CtoLevel = () => {
             case 'The Ultimate answer - 8 charm':
                 if (charm >= 8) {
                     setCharm((prevCharm) => Math.max(0, prevCharm - 8));
-                    setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
+                    setBossInterest((prevInterest) => Math.min(500, prevInterest + 60));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -163,12 +162,12 @@ const CtoLevel = () => {
 
     return (
         <>
-            <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} />
+            <Boss bossName={"CTO Interest:"} bossInterest={bossInterest} maxInterest={500} />
             <div className="recruiterLevel">
                 <img className="bossImage" src="/src/assets/recruiter.jpg" />
             </div>
             <div className="boss-powers-layout">
-                {isBossAttacking ? null : <p className="boss-powers">The Recruiter is watching you...</p>}
+                {isBossAttacking ? null : <p className="boss-powers">The CTO is inspecting you...</p>}
                 {errorMessage && <p className="boss-powers">{errorMessage}</p>}
                 {isBossAttacking && <p className="boss-powers">The Recruiter {selectedPower}</p>}
                 {isBossAttacking && <p className="boss-powers">{powerText}</p>}
