@@ -19,7 +19,7 @@ const CeoLevel = () => {
         { name: 'Complex Algorithm - 10 charm', description: "Bodmas, loops, recursion, data structures, and optimization techniques. You've got this . Raise interest by 80" },
         { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 15' },
     ];
-    const powers = ['shouts Fizz Buzz at you', 'asks why you did it in React', "says you've missed a semi colon", 'affirms with a thoughtful nod', 'just shakes their head'];
+    const powers = ['stares into your soul', 'looks you up and down', "interrupts you", 'expresses doubt about your qualifications', 'almost smiles', 'interrupts the interview to take a phone call', "tries to wrap up the interview early"];
     const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
@@ -113,25 +113,33 @@ const CeoLevel = () => {
         setSelectedPower(randomPower);
 
         switch (randomPower) {
-            case 'shouts Fizz Buzz at you':
-                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 4));
-                setPowerText("You've lost 4 confidence");
+            case 'stares into your soul':
+                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 10));
+                setPowerText("You've lost 10 confidence");
                 break;
-            case 'asks why you did it in React':
+            case 'looks you up and down':
+                setCharm((prevCharm) => Math.max(0, prevCharm - 5));
+                setPowerText("You've lost 5 charm");
+                break;
+            case "interrupts you" :
+                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 6));
+                setPowerText("You've lost 6 confidence");
+                break;
+            case 'expresses doubt about your qualifications':
+                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 12));
+                setPowerText("You've lost 12 confidence");
+                break;
+            case 'almost smiles':
+                setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 1));
+                setPowerText("You've gained 1 confidence");
+                break;
+            case 'interrupts the interview to take a phone call':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 8));
                 setPowerText("You've lost 8 confidence");
                 break;
-            case "says you've missed a semi colon" :
-                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 2));
-                setPowerText("You've lost 2 confidence");
-                break;
-            case 'affirms with a thoughtful nod':
-                setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 4));
-                setPowerText("You've gained 4 confidence");
-                break;
-            case 'just shakes their head':
-                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 6));
-                setPowerText("You've lost 6 confidence");
+            case 'tries to wrap up the interview early':
+                setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 15));
+                setPowerText("You've lost 15 confidence");
                 break;
             default:
                 break;
