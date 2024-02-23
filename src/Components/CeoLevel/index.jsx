@@ -3,6 +3,7 @@ import Player from "../Player/index.jsx";
 import Boss from "../Boss/index.jsx";
 import './CeoLevel.css';
 import {useNavigate} from "react-router-dom";
+import soundClip from '/src/assets/ceomusic.mp3';
 
 const CeoLevel = () => {
     const navigate = useNavigate();
@@ -21,6 +22,20 @@ const CeoLevel = () => {
     ];
     const powers = ['stares into your soul', 'looks you up and down', "interrupts you", 'expresses doubt about your qualifications', 'almost smiles', 'interrupts the interview to take a phone call', "tries to wrap up the interview early"];
     const [errorMessage, setErrorMessage] = useState("");
+    const audioElement = new Audio(soundClip);
+    audioElement.loop = true;
+
+    const playSound = () => {
+        audioElement.play();
+    };
+    useEffect(() => {
+        playSound();
+        return () => {
+
+            audioElement.pause();
+            audioElement.currentTime = 0;
+        };
+    }, []);
 
     useEffect(() => {
         if (playerHealth === 0) {
@@ -177,7 +192,7 @@ const CeoLevel = () => {
 
     return (
         <>
-            <Boss bossName={"CTO Interest:"} bossInterest={bossInterest} maxInterest={500} />
+            <Boss bossName={"CEO Interest:"} bossInterest={bossInterest} maxInterest={500} />
             <div className="recruiterLevel">
                 <img className="bossImage" src="/src/assets/ceo.jpg" />
             </div>

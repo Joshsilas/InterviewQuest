@@ -22,18 +22,20 @@ const RecruiterLevel = () => {
     ];
     const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', 'Seems Interested'];
     const [errorMessage, setErrorMessage] = useState("");
-
     const audioElement = new Audio(soundClip);
     audioElement.loop = true;
 
-    // Function to play the sound
     const playSound = () => {
-        audioElement.play();
+        if (audioElement.paused) {
+            audioElement.play().catch(error => {
+                console.error('Error playing audio:', error);
+            });
+        }
     };
     useEffect(() => {
         playSound();
         return () => {
-            // Cleanup on component unmount
+
             audioElement.pause();
             audioElement.currentTime = 0;
         };

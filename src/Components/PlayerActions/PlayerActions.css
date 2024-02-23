@@ -21,7 +21,7 @@
 .charm-skill-button::after {
     content: attr(data-hover-message);
     position: absolute;
-    top: -130%;
+    top: -100px; /* Adjust this value to position the tooltips vertically */
     left: 50%;
     transform: translateX(-50%);
     background-color: #333;
