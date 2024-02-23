@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Player from "../Player/index.jsx";
 import Boss from "../Boss/index.jsx";
-import './Recruiterlevel.css';
+import './Ctolevel.css';
 import {useNavigate} from "react-router-dom";
 
-const RecruiterLevel = () => {
+const CtoLevel = () => {
     const navigate = useNavigate();
     const [bossInterest, setBossInterest] = useState(0);
-    const [playerHealth, setPlayerHealth] = useState(10);
-    const [charm, setCharm] = useState(10);
+    const [playerHealth, setPlayerHealth] = useState(20);
+    const [charm, setCharm] = useState(20);
     const [isBossAttacking, setIsBossAttacking] = useState(false);
     const [selectedSkill, setSelectedSkill] = useState(null);
     const [selectedPower, setSelectedPower] = useState(null);
@@ -26,7 +26,7 @@ const RecruiterLevel = () => {
         if (playerHealth === 0) {
             badInterview();
         }
-        if (bossInterest >= 100) {
+        if (bossInterest >= 500) {
             goodInterview();
         }
     }, [playerHealth, bossInterest]);
@@ -64,8 +64,8 @@ const RecruiterLevel = () => {
                 break;
             case 'FACTS AND FIGURES - 4 charm':
                 if (charm >= 4) {
-                setCharm((prevCharm) => Math.max(0, prevCharm - 4));
-                setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 4));
+                    setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -77,8 +77,8 @@ const RecruiterLevel = () => {
                 break;
             case 'The Ultimate answer - 8 charm':
                 if (charm >= 8) {
-                setCharm((prevCharm) => Math.max(0, prevCharm - 8));
-                setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 8));
+                    setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -91,8 +91,8 @@ const RecruiterLevel = () => {
 
             case 'Boost your confidence - 3 charm':
                 if (charm >= 3) {
-                setCharm((prevCharm) => Math.max(0, prevCharm - 3));
-                setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
+                    setCharm((prevCharm) => Math.max(0, prevCharm - 3));
+                    setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
                 } else {
                     setIsBossAttacking(false);
                     setErrorMessage('Not enough charm to use this skill!');
@@ -103,12 +103,12 @@ const RecruiterLevel = () => {
                 }
                 break;
             default:
-    } setTimeout(() => {
+        } setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
 
-    }, 1000);
+        }, 1000);
         setErrorMessage("");
-};
+    };
 
 
     const handleBossPowerUsed = () => {
@@ -174,7 +174,7 @@ const RecruiterLevel = () => {
                 {isBossAttacking && <p className="boss-powers">{powerText}</p>}
             </div>
             <Player
-                playerName="Hopeful Candidate"
+                playerName="Strong Candidate"
                 onAttack={handlePlayerAttack}
                 onUseSkill={handleUseSkill}
                 health={playerHealth}
@@ -188,4 +188,4 @@ const RecruiterLevel = () => {
     );
 };
 
-export default RecruiterLevel;
+export default CtoLevel;
