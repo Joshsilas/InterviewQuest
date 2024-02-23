@@ -13,8 +13,8 @@ body {
     text-align: center;
     font-family: 'Courier New', monospace;
     object-fit: contain;
-    max-width: 400px; /* set the maximum width */
-    max-height: 300px; /* set the maximum height */
+    max-width: 400px;
+    max-height: 300px;
 }
 .recruiterLevel {
     display: flex;

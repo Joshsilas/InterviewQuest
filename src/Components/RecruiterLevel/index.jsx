@@ -43,7 +43,7 @@ const RecruiterLevel = () => {
         if (selectedSkill.name.includes('charm') && charm === 0) {
             setErrorMessage('Not enough charm to use this skill!');
             setTimeout(() => {
-                setErrorMessage(""); // Clear the error message after 5 seconds
+                setErrorMessage("");
             }, 1000);
             return;
         }
