@@ -14,6 +14,7 @@ const CeoLevel = () => {
     const [selectedSkill, setSelectedSkill] = useState(null);
     const [selectedPower, setSelectedPower] = useState(null);
     const [powerText, setPowerText] = useState("");
+    const [lockButton, setLockedButton] = useState(false)
     const charmSkills = [
         { name: 'You Speak from experience - 3 Charm', description: 'All these interviews, you know the answer. Raise interest by 40' },
         { name: 'Candidate of Destiny - 30 Charm', description: "As the Candidate of Destiny, you impress the CEO, restoring 25 confidence, raise interest by 150, and leaving a lasting positive impression." },
@@ -48,10 +49,10 @@ const CeoLevel = () => {
 
     const handlePlayerAttack = () => {
         setBossInterest((prevInterest) => Math.min(500, prevInterest + 20));
-
+        setLockedButton(true)
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
-        }, 500);
+        }, 1000);
     }
 
     const handleUseSkill = (selectedSkill) => {
@@ -65,6 +66,7 @@ const CeoLevel = () => {
         switch (selectedSkill.name) {
             case 'You Speak from experience - 3 Charm':
                 if (charm >= 3) {
+                    setLockedButton(true)
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                     setBossInterest((prevInterest) => Math.min(500, prevInterest + 40));
                 } else {
@@ -78,6 +80,7 @@ const CeoLevel = () => {
                 break;
             case 'Candidate of Destiny - 30 Charm':
                 if (charm >= 30) {
+                    setLockedButton(true)
                     setCharm((prevCharm) => Math.max(0, prevCharm - 30));
                     setBossInterest((prevInterest) => Math.min(500, prevInterest + 150));
                     setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 25));
@@ -92,6 +95,7 @@ const CeoLevel = () => {
                 break;
             case 'Visionary Leadership  - 5 charm':
                 if (charm >= 5) {
+                    setLockedButton(true)
                     setCharm((prevCharm) => Math.max(0, prevCharm - 5));
                     setBossInterest((prevInterest) => Math.min(500, prevInterest + 60));
                 } else {
@@ -105,6 +109,7 @@ const CeoLevel = () => {
                 break;
             case 'Boost your confidence - 3 charm':
                 if (charm >= 3) {
+                    setLockedButton(true)
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                     setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 20));
                 } else {
@@ -167,7 +172,8 @@ const CeoLevel = () => {
 
         setTimeout(() => {
             setIsBossAttacking(false);
-        }, 3000);
+            setLockedButton(false)
+        }, 3500);
     };
 
     const goodInterview = () => {
@@ -208,7 +214,7 @@ const CeoLevel = () => {
                 onUseSkill={handleUseSkill}
                 health={playerHealth}
                 charm={charm}
-                isBossAttacking={isBossAttacking}
+                lockButton={lockButton}
                 charmSkills={charmSkills}
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
