@@ -14,6 +14,7 @@ const RecruiterLevel = () => {
     const [selectedSkill, setSelectedSkill] = useState(null);
     const [selectedPower, setSelectedPower] = useState(null);
     const [powerText, setPowerText] = useState("");
+    const [lockButton, setLockedButton] = useState(false)
     const charmSkills = [
         { name: 'Think about your answer - 3 Charm', description: 'Take a moment to formulate a thoughtful response. Raise interest by 20' },
         { name: 'FACTS AND FIGURES - 4 charm', description: 'Impress them with relevant facts and figures. Raise interest by 30' },
@@ -53,10 +54,10 @@ const RecruiterLevel = () => {
 
     const handlePlayerAttack = () => {
         setBossInterest((prevInterest) => Math.min(100, prevInterest + 10));
-
+        setLockedButton(true)
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
-        }, 0);
+        }, 1000);
     }
 
     const handleUseSkill = (selectedSkill) => {
@@ -70,7 +71,8 @@ const RecruiterLevel = () => {
 
         switch (selectedSkill.name) {
             case 'Think about your answer - 3 Charm':
-                if (charm >= 2) {
+                if (charm >= 3) {
+                    setLockedButton(true)
                     setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                     setBossInterest((prevInterest) => Math.min(100, prevInterest + 20));
                 } else {
@@ -84,6 +86,7 @@ const RecruiterLevel = () => {
                 break;
             case 'FACTS AND FIGURES - 4 charm':
                 if (charm >= 4) {
+                    setLockedButton(true)
                 setCharm((prevCharm) => Math.max(0, prevCharm - 4));
                 setBossInterest((prevInterest) => Math.min(100, prevInterest + 30));
                 } else {
@@ -97,6 +100,7 @@ const RecruiterLevel = () => {
                 break;
             case 'The Ultimate answer - 8 charm':
                 if (charm >= 8) {
+                    setLockedButton(true)
                 setCharm((prevCharm) => Math.max(0, prevCharm - 8));
                 setBossInterest((prevInterest) => Math.min(100, prevInterest + 60));
                 } else {
@@ -111,6 +115,7 @@ const RecruiterLevel = () => {
 
             case 'Boost your confidence - 3 charm':
                 if (charm >= 3) {
+                    setLockedButton(true)
                 setCharm((prevCharm) => Math.max(0, prevCharm - 3));
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 10));
                 } else {
@@ -125,8 +130,7 @@ const RecruiterLevel = () => {
             default:
     } setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
-
-    }, 0);
+    }, 1000);
         setErrorMessage("");
 };
 
@@ -158,7 +162,8 @@ const RecruiterLevel = () => {
 
         setTimeout(() => {
             setIsBossAttacking(false);
-        }, 3000);
+            setLockedButton(false)
+        }, 3500);
     };
 
     const goodInterview = () => {
@@ -199,7 +204,7 @@ const RecruiterLevel = () => {
                 onUseSkill={handleUseSkill}
                 health={playerHealth}
                 charm={charm}
-                isBossAttacking={isBossAttacking}
+                lockButton={lockButton}
                 charmSkills={charmSkills}
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
