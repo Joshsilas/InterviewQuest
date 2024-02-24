@@ -56,7 +56,7 @@ const RecruiterLevel = () => {
 
         setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
-        }, 500);
+        }, 0);
     }
 
     const handleUseSkill = (selectedSkill) => {
@@ -126,7 +126,7 @@ const RecruiterLevel = () => {
     } setTimeout(() => {
             setIsBossAttacking((prevIsBossAttacking) => !prevIsBossAttacking);
 
-    }, 1000);
+    }, 0);
         setErrorMessage("");
 };
 
