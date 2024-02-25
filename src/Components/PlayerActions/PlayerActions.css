@@ -53,3 +53,8 @@
         white-space: normal;
     }
 }
+@media (max-width: 800px) {
+    .player-actions button{
+        padding: 5px;
+    }
+}

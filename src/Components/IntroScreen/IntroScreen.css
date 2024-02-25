@@ -49,3 +49,14 @@ body {
 .button:hover {
     background-color: #218838;
 }
+
+
+@media (max-width: 800px) {
+    .intro-screen {
+        font-size: 0.6rem;
+    }
+    .introbutton {
+        padding: 5px;
+        font-size: 0.6rem;
+    }
+}

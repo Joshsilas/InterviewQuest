@@ -25,7 +25,7 @@ const AcceptanceLetter = () => {
             <div className="StoryScreen">
                 <div className="email-header">
                     <span>From: InterviewQuest Corp</span>
-                    <span>Date: A!</span>
+                    <span>Date: A day of Victory!</span>
                 </div>
                 <div className="email-content">
                     <p>Dear the Chosen Candidate!</p>

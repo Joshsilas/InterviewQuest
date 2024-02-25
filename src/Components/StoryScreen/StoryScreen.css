@@ -53,3 +53,10 @@
         width: 100%;
     }
 }
+
+@media (max-width: 800px) {
+    .StoryScreen {
+    font-size: 0.8rem;
+        margin: 5px;
+    }
+}

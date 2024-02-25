@@ -16,7 +16,7 @@ const IntroScreen = () => {
 
     return (
         <div className="intro-screen">
-            <h1>Job Hunt: The Game</h1>
+            <h1>Interview Quest</h1>
             <div className="job-advertisement">
                 <h2>Exciting Opportunity!</h2>
                 <p>
