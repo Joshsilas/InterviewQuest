@@ -35,7 +35,7 @@ const AcceptanceLetter = () => {
                     <p>I hope you enjoyed the process.</p>
                     <p>I commend your resilience</p>
                     <p>Your confidence is now full to the brim.</p>
-                    <p>Your charm power is now a top talent.</p>
+                    <p>Your charm is now a top talent.</p>
                     <p>You have Piqued our interest.</p>
                     <p>Kindest regards</p>
                     <p>The CEO</p>

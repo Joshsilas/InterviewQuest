@@ -35,7 +35,7 @@ const StoryScreen = () => {
                     <p>Your engagement power is 10.</p>
                     <p>Your confidence is 10.</p>
                     <p>Your charm is 10.</p>
-                    <p>Pique their interest to 100 to proceed to the next round.</p>
+                    <p>Pique their interest to 100 to proceed to the second round.</p>
                     <p>Kind regards</p>
                     <p>The CEO</p>
                     {loading && <div className="loading-bar"></div>}

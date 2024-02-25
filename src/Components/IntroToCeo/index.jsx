@@ -34,7 +34,7 @@ const IntroToCeo = () => {
                         <p>You will be interviewing with me!</p>
                         <p>Your engagement power is now 20.</p>
                         <p>Your confidence is now 50.</p>
-                        <p>Your charm power is now 50.</p>
+                        <p>Your charm is now 50.</p>
                         <p>Pique my interest to 500 and the job is yours.</p>
                         <p>See you soon...</p>
                         <p>The CEO</p>
