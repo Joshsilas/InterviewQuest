@@ -17,7 +17,7 @@ Welcome to Interview Quest, a React-based game that simulates the challenging jo
 
 ## Key Features 
 1. Turn Based engagement: Navigate through the interview rounds using a turn-based system, where your decisions impact the outcome.
-2. Progressively Challenging Levels: Encounter three levels of increasing difficulty—The Recruiter, The CTO, and the CEO—each presenting unique challenges and dynamics.
+2. Progressively Challenging Levels: Encounter three levels of increasing difficulty—The Recruiter, The CTO, and the CEO. Each presenting unique challenges and dynamics.
 3. Charm Skills: Unlock and utilize various charm skills during the game, allowing you to influence the interviewer's interest positively. Strategically choose when to use these skills for maximum impact.
 4. Interviewer Personalities: Each interviewer (Recruiter, CTO, CEO) has a distinct personality and preferred interview style.
 5. Visual and Audio Effects: Enhance the gaming experience with graphics and sound effects that complement the mood of each interview round, making the game more immersive.
