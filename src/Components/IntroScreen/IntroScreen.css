@@ -5,13 +5,12 @@ body {
 
 .intro-screen {
     background-color: #f0f0f0;
-    padding: 20px;
+    height: 100vh;
     text-align: center;
     color: black;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
 }
 
 .job-advertisement {
@@ -19,7 +18,6 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
 }
 
 .job-advertisement h2 {
@@ -29,15 +27,23 @@ body {
 .job-advertisement p {
     margin: 10px 0;
 }
+.ButtonPlace{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 
-.button {
+}
+.introbutton {
     background-color: #28a745;
     color: #ffffff;
+    margin: 5px;
+    border: 2px solid black;
+    width: 20%;
     padding: 10px 20px;
     font-size: 16px;
-    border: none;
     border-radius: 4px;
     cursor: pointer;
+
 }
 
 .button:hover {

@@ -23,18 +23,24 @@ const IntroScreen = () => {
                     <strong>Job Title:</strong> The Dream JOB you really want!
                 </p>
                 <p>
-                    <strong>Company:</strong> Insert where application has been sent to here!
+                    <strong>Company:</strong> InterviewQuest Corp.
                 </p>
                 <p>
                     <strong>Requirements:</strong>
                 </p>
-                <p>Your now going to apply for your dream job!</p>
-                <p> You will have to peak the interest of the Recruiter, The CTO and then finally the CEO!</p>
-                <p> Your confidence is key and if you lose it that's it you have failed the interview. Use your charm to give you the edge.</p>
-                   <p> Good Luck!</p>
-                <Button onClick={begin} text={'Apply Now'} />
+                <p>Embark on a thrilling journey as you apply for your dream job and navigate through the interview stages in an old-school turn-based RPG.</p>
+                <p>There are three stages of interviews to get the job. </p>
+                <p>Engage with the hirers to pique their interests.</p>
+                <p>Your confidence is your life-line and if you lose it that is it you have failed the interview.</p>
+                <p>Your charm is your special abilities, utilise them well as you only have so much. Sometimes using all your charm at once will leave you vulnerable.</p>
+                <p>Good Luck Hopeful Candidate!</p>
+                <div className="ButtonPlace">
+                <Button className="introbutton" onClick={begin} text={'Apply Now'} />
+                <Button className="introbutton" onClick={realLife} text={'Real Life Mode'} />
+                </div>
+                <p>* Real life mode is intended as a joke, but for anyone who is currently job hunting, this is for you!.</p>
             </div>
-            <Button onClick={realLife} text={'Real Life Mode'} />
+
         </div>
     );
 };

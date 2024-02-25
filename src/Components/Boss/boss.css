@@ -57,3 +57,11 @@
     display: flex;
     justify-content: center;
 }
+
+
+@media (max-width: 767px) {
+    .interestText {
+        font-size: 0.8rem;
+    }
+}
+

@@ -202,7 +202,7 @@ const RecruiterLevel = () => {
     }, [isBossAttacking]);
 
     return (
-        <>
+        <div className="recruiterLevelBody">
             <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} maxInterest={100}/>
             <div className="recruiterLevel">
                 <img className="bossImage" src="/src/assets/recruiter.jpg" />
@@ -224,7 +224,7 @@ const RecruiterLevel = () => {
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
             />
-        </>
+        </div>
     );
 };
 

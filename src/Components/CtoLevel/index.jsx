@@ -203,7 +203,7 @@ const CtoLevel = () => {
     }, [isBossAttacking]);
 
     return (
-        <>
+        <div className="CtoLevelBody">
             <Boss bossName={"CTO Interest:"} bossInterest={bossInterest} maxInterest={300} />
             <div className="recruiterLevel">
                 <img className="bossImage" src="/src/assets/softwaredev.jpg" />
@@ -225,7 +225,7 @@ const CtoLevel = () => {
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
             />
-        </>
+        </div>
     );
 };
 
