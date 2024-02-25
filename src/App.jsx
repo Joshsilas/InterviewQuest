@@ -9,6 +9,7 @@ import IntroToCto from "./Components/IntroToCto/index.jsx";
 import CtoLevel from "./Components/CtoLevel/index.jsx";
 import IntroToCeo from "./Components/IntroToCeo/index.jsx";
 import CeoLevel from "./Components/CeoLevel/index.jsx";
+import AcceptanceLetter from "./Components/AcceptanceLetter/index.jsx";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/CtoLevel/" element={<CtoLevel/>} />
                 <Route path="/IntroToCeo/" element={<IntroToCeo/>} />
                 <Route path="/CeoLevel/" element={<CeoLevel/>} />
+                <Route path="/AcceptanceLetter/" element={<AcceptanceLetter/>} />
                 </Routes>
              </BrowserRouter>
     </>

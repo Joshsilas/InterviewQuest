@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const IntroToCto = () => {
+const AcceptanceLetter = () => {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            navigate("/CtoLevel/");
+            navigate("/");
         }, 20000);
 
         const loadingTimer = setTimeout(() => {
@@ -25,18 +25,19 @@ const IntroToCto = () => {
             <div className="StoryScreen">
                 <div className="email-header">
                     <span>From: InterviewQuest Corp</span>
-                    <span>Date: A Strong day!</span>
+                    <span>Date: A!</span>
                 </div>
                 <div className="email-content">
-                    <p>Dear Strong Candidate,</p>
-                    <p>Congratulations, Level Up!</p>
-                    <p>We are excited to invite you to the second stage interview at InterviewQuest Corp!</p>
-                    <p>You will be interviewing with THE CTO!</p>
-                    <p>Your engagement power is now 15.</p>
-                    <p>Your confidence is now 30.</p>
-                    <p>Your charm power is now 30.</p>
-                    <p>Pique their interest to 300 to proceed to the final round.</p>
-                    <p>Kind regards</p>
+                    <p>Dear the Chosen Candidate!</p>
+                    <p>Congratulations!</p>
+                    <p>The Job is yours!</p>
+                    <p>We are excited to invite you to join us at InterviewQuest Corp!</p>
+                    <p>I hope you enjoyed the process.</p>
+                    <p>I commend your resilience</p>
+                    <p>Your confidence is now full to the brim.</p>
+                    <p>Your charm power is now a top talent.</p>
+                    <p>You have Piqued our interest.</p>
+                    <p>Kindest regards</p>
                     <p>The CEO</p>
                     {loading && <div className="loading-bar"></div>}
                 </div>
@@ -45,4 +46,4 @@ const IntroToCto = () => {
     );
 };
 
-export default IntroToCto;
+export default AcceptanceLetter;

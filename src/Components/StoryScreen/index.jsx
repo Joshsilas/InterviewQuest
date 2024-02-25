@@ -33,7 +33,8 @@ const StoryScreen = () => {
                     <p>We are excited to invite you to the first stage interview at InterviewQuest Corp!</p>
                     <p>You will be interviewing with THE RECRUITER!</p>
                     <p>Your engagement power is 10.</p>
-                    <p>Your charm power is 10.</p>
+                    <p>Your confidence is 10.</p>
+                    <p>Your charm is 10.</p>
                     <p>Pique their interest to 100 to proceed to the next round.</p>
                     <p>Kind regards</p>
                     <p>The CEO</p>

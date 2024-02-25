@@ -198,7 +198,7 @@ const CeoLevel = () => {
     const goodInterview = () => {
         setIsBossAttacking(false);
         setTimeout(() => {
-            navigate("/IntroToCeo/");
+            navigate("/AcceptanceLetter/");
         }, 2000);
     };
 
