@@ -78,4 +78,7 @@ body {
     .bossImage {
         max-width: 50%;
     }
+    .boss-powers{
+        font-size: 0.9rem;
+    }
 }

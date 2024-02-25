@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from "../Button/index.jsx";
 
 const AcceptanceLetter = () => {
     const navigate = useNavigate();
@@ -19,6 +20,10 @@ const AcceptanceLetter = () => {
             clearTimeout(loadingTimer);
         };
     }, [navigate]);
+
+    const continueOnClick = () => {
+        navigate("/");
+    }
 
     return (
         <div className="container">
@@ -40,6 +45,9 @@ const AcceptanceLetter = () => {
                     <p>Kindest regards</p>
                     <p>The CEO</p>
                     {loading && <div className="loading-bar"></div>}
+                </div>
+                <div className="skipButtonlayout">
+                    <Button className="skipButton" onClick={continueOnClick} text={'Accept Job'} />
                 </div>
             </div>
         </div>

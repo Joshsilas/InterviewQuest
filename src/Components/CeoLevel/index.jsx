@@ -159,7 +159,7 @@ const CeoLevel = () => {
                 break;
             case 'looks you up and down':
                 if (charm <= 0) {
-                    setPowerText("The boss refrains from judging you, as you have no charm left!");
+                    setPowerText("The boss refrains from judging you!");
                     break;
                 }
                 setCharm((prevCharm) => Math.max(0, prevCharm - 5));

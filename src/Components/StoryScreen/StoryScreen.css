@@ -44,6 +44,19 @@
     border-radius: 3px;
     animation: loadingAnimation 20s linear;
 }
+.skipButtonlayout{
+    display: flex;
+    justify-content: center;
+}
+.skipButton{
+    color: #000000;
+    margin: 5px;
+    border: 2px solid black;
+
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 @keyframes loadingAnimation {
     from {
@@ -58,5 +71,8 @@
     .StoryScreen {
     font-size: 0.8rem;
         margin: 5px;
+    }
+    .skipButton{
+        font-size: 0.8rem;
     }
 }

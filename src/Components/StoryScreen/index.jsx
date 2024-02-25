@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './StoryScreen.css';
+import Button from "../Button/index.jsx";
 
 const StoryScreen = () => {
     const navigate = useNavigate();
@@ -21,6 +22,10 @@ const StoryScreen = () => {
         };
     }, [navigate]);
 
+    const continueOnClick = () => {
+        navigate("/recruiterLevel/");
+    }
+
     return (
         <div className="container">
             <div className="StoryScreen">
@@ -39,6 +44,9 @@ const StoryScreen = () => {
                     <p>Kind regards</p>
                     <p>The CEO</p>
                     {loading && <div className="loading-bar"></div>}
+                </div>
+                <div className="skipButtonlayout">
+                <Button className="skipButton" onClick={continueOnClick} text={'Continue'} />
                 </div>
             </div>
         </div>
