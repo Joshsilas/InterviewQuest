@@ -6,13 +6,9 @@
     text-align: center;
     font-family: 'Courier New', monospace;
     object-fit: contain;
-    max-width: 300px; /* set the maximum width */
-    max-height: 200px; /* set the maximum height */
+    max-width: 300px;
+    max-height: 200px;
 }
-
-    /*background-image: url("/src/assets/recruiter.jpg");*/
-    /*background-size: cover; !* Cover the entire container without repeating *!*/
-    /*background-repeat: no-repeat;*/
 
 .bossContainer {
     position: relative;
