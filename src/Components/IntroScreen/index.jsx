@@ -39,6 +39,7 @@ const IntroScreen = () => {
                 <Button className="introbutton" onClick={realLife} text={'Real Life Mode'} />
                 </div>
                 <p>* Real life mode is intended as a joke, but for anyone who is currently job hunting, this is for you!.</p>
+                <strong>Please send any emails regarding this position to: Josh</strong>
             </div>
 
         </div>

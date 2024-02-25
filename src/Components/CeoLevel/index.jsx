@@ -222,7 +222,7 @@ const CeoLevel = () => {
                 <img className="CeobossImage" src="/src/assets/ceo.jpg" />
             </div>
             <div className="boss-powers-layout">
-                {isBossAttacking ? null : <p className="boss-powers">The CEO is judging you...</p>}
+                {isBossAttacking ? null : <p className="boss-powers-waiting">The CEO is judging you...</p>}
                 {errorMessage && <p className="boss-powers">{errorMessage}</p>}
                 {isBossAttacking && <p className="boss-powers">The CEO {selectedPower}</p>}
                 {isBossAttacking && <p className="boss-powers">{powerText}</p>}

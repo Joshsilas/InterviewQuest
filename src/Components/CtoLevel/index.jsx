@@ -18,7 +18,7 @@ const CtoLevel = () => {
     const charmSkills = [
         { name: 'Bug Squashing - 3 Charm', description: 'You know how to debug that. Raise interest by 30' },
         { name: 'In-Depth Technical Explanation - 4 charm', description: 'Provide an in-depth explanation of a technical concept. Raise interest by 40' },
-        { name: 'Complex Algorithm - 10 charm', description: "Bodmas, loops, recursion, data structures, and optimization techniques. You've got this . Raise interest by 80" },
+        { name: 'Complex Algorithm - 10 charm', description: "Bodmas, loops, data structures, and optimization techniques. You've got this. Raise interest by 80" },
         { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 15' },
     ];
     const powers = ['shouts Fizz Buzz at you', 'asks why you did it in React', "says you've missed a semi colon", 'affirms with a thoughtful nod', 'just shakes their head'];
@@ -209,7 +209,7 @@ const CtoLevel = () => {
                 <img className="bossImage" src="/src/assets/softwaredev.jpg" />
             </div>
             <div className="boss-powers-layout">
-                {isBossAttacking ? null : <p className="boss-powers">The CTO is inspecting you...</p>}
+                {isBossAttacking ? null : <p className="boss-powers-waiting">The CTO is inspecting you...</p>}
                 {errorMessage && <p className="boss-powers">{errorMessage}</p>}
                 {isBossAttacking && <p className="boss-powers">The CTO {selectedPower}</p>}
                 {isBossAttacking && <p className="boss-powers">{powerText}</p>}

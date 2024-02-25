@@ -31,12 +31,27 @@ body {
     width: 100%
 }
 
-.boss-powers {
+.boss-powers-waiting {
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
-
+    animation: waveAnimation 1s infinite linear;
 }
+
+@keyframes waveAnimation {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-2px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(2px); }
+    100% { transform: translateY(0); }
+}
+
+.boss-powers{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
 .boss-powers-layout {
     position: relative;
     height: 60px;

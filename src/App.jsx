@@ -18,7 +18,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<IntroScreen />} />
                 <Route path="/StoryPage/" element={<StoryScreen />} />
-                <Route path="/game/" element={<RecruiterLevel/>} />
+                <Route path="/recruiterLevel/" element={<RecruiterLevel/>} />
                 <Route path="/failedInterview/" element={<FailedInterview/>} />
                 <Route path="/IntroToCto/" element={<IntroToCto/>} />
                 <Route path="/CtoLevel/" element={<CtoLevel/>} />
