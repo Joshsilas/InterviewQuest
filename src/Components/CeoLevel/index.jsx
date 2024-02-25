@@ -23,26 +23,45 @@ const CeoLevel = () => {
     ];
     const powers = ['stares into your soul', 'looks you up and down', "interrupts you", 'expresses doubt about your qualifications', 'almost smiles', 'interrupts the interview to take a phone call', "tries to wrap up the interview early"];
     const [errorMessage, setErrorMessage] = useState("");
-
     const audioElement = new Audio(soundClip);
     audioElement.loop = true;
-
     const playSound = () => {
-        audioElement.play();
+        if (audioElement.readyState >= 2) {
+            if (audioElement.paused) {
+                audioElement.play()
+                    .then(() => console.log('Audio play success'))
+                    .catch(error => {
+                        console.error('Error playing audio:', error);
+                    });
+            }
+        } else {
+            console.error('Audio not loaded');
+        }
     };
-    useEffect(() => {
-        playSound();
-        return () => {
+    const stopSound = () => {
+        if (!audioElement.paused) {
             audioElement.pause();
             audioElement.currentTime = 0;
+        }
+    };
+    useEffect(() => {
+        const handleCanPlay = () => {
+            playSound();
+        };
+        audioElement.addEventListener('canplay', handleCanPlay);
+        return () => {
+            audioElement.removeEventListener('canplay', handleCanPlay);
+            stopSound();
         };
     }, []);
 
     useEffect(() => {
         if (playerHealth === 0) {
+            stopSound();
             badInterview();
         }
         if (bossInterest >= 500) {
+            stopSound();
             goodInterview();
         }
     }, [playerHealth, bossInterest]);

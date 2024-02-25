@@ -27,27 +27,42 @@ const RecruiterLevel = () => {
     audioElement.loop = true;
 
     const playSound = () => {
-        if (audioElement.paused) {
-            audioElement.play().catch(error => {
-                // Handle play error, if any
-                console.error('Error playing audio:', error);
-            });
+        if (audioElement.readyState >= 2) {
+            if (audioElement.paused) {
+                audioElement.play()
+                    .then(() => console.log('Audio play success'))
+                    .catch(error => {
+                        console.error('Error playing audio:', error);
+                    });
+            }
+        } else {
+            console.error('Audio not loaded');
+        }
+    };
+    const stopSound = () => {
+        if (!audioElement.paused) {
+            audioElement.pause();
+            audioElement.currentTime = 0;
         }
     };
     useEffect(() => {
-        playSound();
+        const handleCanPlay = () => {
+            playSound();
+        };
+        audioElement.addEventListener('canplay', handleCanPlay);
         return () => {
-
-            audioElement.pause();
-            audioElement.currentTime = 0;
+            audioElement.removeEventListener('canplay', handleCanPlay);
+            stopSound();
         };
     }, []);
 
     useEffect(() => {
         if (playerHealth === 0) {
+            stopSound();
             badInterview();
         }
         if (bossInterest >= 100) {
+            stopSound();
             goodInterview();
         }
     }, [playerHealth, bossInterest]);
