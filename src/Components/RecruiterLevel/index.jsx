@@ -21,7 +21,7 @@ const RecruiterLevel = () => {
         { name: 'The Ultimate answer - 8 charm', description: 'Unleash the ultimate answer to captivate them. Raise interest by 60' },
         { name: 'Boost your confidence - 3 charm', description: 'Boost your confidence and leave a lasting impression. Heal your confidence 10' },
     ];
-    const powers = ['Asks you a generic Question', 'Yawns', 'Stares blankly', 'Seems Interested'];
+    const powers = ['asks you a generic question', 'yawns', 'stares blankly', 'seems interested'];
     const [errorMessage, setErrorMessage] = useState("");
     const audioElement = new Audio(soundClip);
     audioElement.loop = true;
@@ -155,19 +155,19 @@ const RecruiterLevel = () => {
         setSelectedPower(randomPower);
 
         switch (randomPower) {
-            case 'Asks you a generic Question':
+            case 'asks you a generic question':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 1));
                 setPowerText("You've lost 1 confidence");
                 break;
-            case 'Yawns':
+            case 'yawns':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 3));
                 setPowerText("You've lost 3 confidence");
                 break;
-            case 'Stares blankly':
+            case 'stares blankly':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth - 2));
                 setPowerText("You've lost 2 confidence");
                 break;
-            case 'Seems Interested':
+            case 'seems interested':
                 setPlayerHealth((prevHealth) => Math.max(0, prevHealth + 2));
                 setPowerText("You've gained 2 confidence");
                 break;
