@@ -206,7 +206,7 @@ const CtoLevel = () => {
         <div className="CtoLevelBody">
             <Boss bossName={"CTO Interest:"} bossInterest={bossInterest} maxInterest={300} />
             <div className="recruiterLevel">
-                <img className="bossImage" src="/src/assets/softwaredev.jpg" alt="CTO" />
+                <img className="bossImage" src="/softwaredev.jpg" alt="CTO" />
             </div>
             <div className="boss-powers-layout">
                 {isBossAttacking ? null : <p className="boss-powers-waiting">The CTO is inspecting you...</p>}

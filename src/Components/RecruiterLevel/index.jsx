@@ -205,7 +205,7 @@ const RecruiterLevel = () => {
         <div className="recruiterLevelBody">
             <Boss bossName={"Recruiter Interest:"} bossInterest={bossInterest} maxInterest={100}/>
             <div className="recruiterLevel">
-                <img className="bossImage" src="/src/assets/recruiter.jpg" alt="Recruiter" />
+                <img className="bossImage" src="/recruiter.jpg" alt="Recruiter" />
             </div>
             <div className="boss-powers-layout">
                 {isBossAttacking ? null : <p className="boss-powers-waiting">The Recruiter is watching you...</p>}

@@ -218,7 +218,7 @@ const CeoLevel = () => {
         <div className="CeoLevelBody">
             <Boss bossName={"CEO Interest:"} bossInterest={bossInterest} maxInterest={500} />
             <div className="recruiterLevel">
-                <img className="CeobossImage" src="/src/assets/ceo.jpg" alt="CEO" />
+                <img className="CeobossImage" src="/ceo.jpg" alt="CEO" />
             </div>
             <div className="boss-powers-layout">
                 {isBossAttacking ? null : <p className="boss-powers-waiting">The CEO is judging you...</p>}
