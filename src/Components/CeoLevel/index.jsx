@@ -216,10 +216,10 @@ const CeoLevel = () => {
     }, [isBossAttacking]);
 
     return (
-        <>
+        <div className="CeoLevelBody">
             <Boss bossName={"CEO Interest:"} bossInterest={bossInterest} maxInterest={500} />
             <div className="recruiterLevel">
-                <img className="bossImage" src="/src/assets/ceo.jpg" />
+                <img className="CeobossImage" src="/src/assets/ceo.jpg" />
             </div>
             <div className="boss-powers-layout">
                 {isBossAttacking ? null : <p className="boss-powers">The CEO is judging you...</p>}
@@ -238,7 +238,7 @@ const CeoLevel = () => {
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
             />
-        </>
+        </div>
     );
 };
 

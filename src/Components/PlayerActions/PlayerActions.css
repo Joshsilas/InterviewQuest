@@ -45,7 +45,7 @@
     background-color: #2ecc71;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1700px) {
     .charm-skill-button::after,
     .attackButton::after {
         top: -300%;

@@ -17,8 +17,8 @@ body {
     text-align: center;
     font-family: 'Courier New', monospace;
     object-fit: contain;
-    max-width: 400px;
-    max-height: 300px;
+    max-width: 600px;
+    max-height: 400px;
 }
 
 .recruiterLevel {
@@ -53,9 +53,14 @@ body {
     background-color: #27ae60;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1700px) {
+    .bossImage {
+        max-width: 22%;
+    }
+}
+
+@media (max-width: 800px) {
     .bossImage {
         max-width: 50%;
     }
 }
-
