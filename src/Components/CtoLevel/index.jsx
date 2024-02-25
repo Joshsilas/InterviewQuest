@@ -3,6 +3,7 @@ import Player from "../Player/index.jsx";
 import Boss from "../Boss/index.jsx";
 import './Ctolevel.css';
 import {useNavigate} from "react-router-dom";
+import soundClip from '/src/assets/ctomusic.mp3';
 
 const CtoLevel = () => {
     const navigate = useNavigate();
@@ -22,12 +23,45 @@ const CtoLevel = () => {
     ];
     const powers = ['shouts Fizz Buzz at you', 'asks why you did it in React', "says you've missed a semi colon", 'affirms with a thoughtful nod', 'just shakes their head'];
     const [errorMessage, setErrorMessage] = useState("");
+    const audioElement = new Audio(soundClip);
+    audioElement.loop = true;
+    const playSound = () => {
+        if (audioElement.readyState >= 2) {
+            if (audioElement.paused) {
+                audioElement.play()
+                    .then(() => console.log('Audio play success'))
+                    .catch(error => {
+                        console.error('Error playing audio:', error);
+                    });
+            }
+        } else {
+            console.error('Audio not loaded');
+        }
+    };
+    const stopSound = () => {
+        if (!audioElement.paused) {
+            audioElement.pause();
+            audioElement.currentTime = 0;
+        }
+    };
+    useEffect(() => {
+        const handleCanPlay = () => {
+            playSound();
+        };
+        audioElement.addEventListener('canplay', handleCanPlay);
+        return () => {
+            audioElement.removeEventListener('canplay', handleCanPlay);
+            stopSound();
+        };
+    }, []);
 
     useEffect(() => {
         if (playerHealth === 0) {
+            stopSound();
             badInterview();
         }
         if (bossInterest >= 300) {
+            stopSound();
             goodInterview();
         }
     }, [playerHealth, bossInterest]);
