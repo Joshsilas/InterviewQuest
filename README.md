@@ -25,7 +25,7 @@ Welcome to Interview Quest, a React-based game that simulates the challenging jo
   
 
 ## Live Demo & Responsivness  
-To experience the game, check out the live demo here [Update with your actual demo link].
+To experience the game, check out the live demo here https://interviewquest.2023-joshb.dev.io-academy.uk/.
 
 This game is designed with responsiveness in mind, ensuring an enjoyable experience across various devices and screen sizes. However it is best played on desktop for the full experience. 
 
