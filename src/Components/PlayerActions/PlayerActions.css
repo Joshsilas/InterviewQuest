@@ -1,3 +1,4 @@
+
 .player-actions button {
     padding: 10px;
     font-size: 16px;
@@ -10,9 +11,65 @@
     transition: background-color 0.3s;
 }
 
+.engageButton button:hover {
+    background-color: #27ae60;
+}
+
 .mainButtons{
     width: 50%;
 }
+
+.charmButton:hover::after {
+    content: attr(data-hover-message);
+    position: absolute;
+    top: 70%;
+    left: 65%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.charmButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    margin: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50%;
+}
+
+.engageButton{
+        padding: 10px;
+        font-size: 16px;
+        background-color: #2ecc71;
+        margin: 5px;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        width: 50%;
+    }
+
+.engageButton:hover::after {
+    content: attr(data-hover-message);
+    position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
 
 .charm-skill-button {
     position: relative;
@@ -54,7 +111,16 @@
     }
 }
 @media (max-width: 800px) {
-    .player-actions button{
+    .player-actions button {
         padding: 5px;
+    }
+
+    .engageButton:hover::after {
+        top: 50%;
+        left: 50%;
+    }
+    .charmButton:hover::after {
+        top: 50%;
+        left: 50%;
     }
 }
