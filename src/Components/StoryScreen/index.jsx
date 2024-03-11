@@ -25,7 +25,7 @@ const StoryScreen = () => {
     const continueOnClick = () => {
         navigate("/recruiterLevel/");
     }
-
+    
     return (
         <div className="container">
             <div className="StoryScreen">
