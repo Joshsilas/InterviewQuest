@@ -9,6 +9,38 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.engageButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    margin: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.player-actions .engageButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    margin: 5px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.player-actions .engageButton:hover {
+    background-color: #27ae60;  // Change the color to the desired hover effect
+}
+
+.player-actions .engageButton::after {
+    content: attr(data-hover-message);
+    /* Add additional styles for the hover message if needed */
+}
 
 .mainButtons{
     width: 50%;

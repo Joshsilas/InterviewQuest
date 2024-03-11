@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Button from "../Button/index.jsx";
 import './PlayerActions.css';
 
-const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmSkills, selectedSkill, setSelectedSkill }) => {
+const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmSkills, selectedSkill, setSelectedSkill, engage }) => {
     const [isCharmMenuOpen, setIsCharmMenuOpen] = useState(false);
 
 
@@ -25,7 +25,7 @@ const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmS
         <div className="player-actions">
             {!isCharmMenuOpen && (
                 <>
-                    <Button className={"mainButtons"} onClick={handleAttack} text={"Engage"} disabled={disabled} />
+                    <Button className="engageButton" onClick={handleAttack} text={engage.name} disabled={disabled}  data-hover-message={engage.description} />
                     <Button className={"mainButtons"} onClick={handleToggleCharmMenu} text={"Use Charm"} disabled={disabled} />
                 </>
             )}

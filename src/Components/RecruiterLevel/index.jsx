@@ -15,6 +15,9 @@ const RecruiterLevel = () => {
     const [selectedPower, setSelectedPower] = useState(null);
     const [powerText, setPowerText] = useState("");
     const [lockButton, setLockedButton] = useState(false)
+    const engage = [
+        { name: 'Engage', description: 'Take a moment to formulate a thoughtful response. Raise interest by 20' },
+        ];
     const charmSkills = [
         { name: 'Think about your answer - 3 Charm', description: 'Take a moment to formulate a thoughtful response. Raise interest by 20' },
         { name: 'FACTS AND FIGURES - 4 charm', description: 'Impress them with relevant facts and figures. Raise interest by 30' },
@@ -223,6 +226,7 @@ const RecruiterLevel = () => {
                 charmSkills={charmSkills}
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
+                engage={engage}
             />
         </div>
     );
