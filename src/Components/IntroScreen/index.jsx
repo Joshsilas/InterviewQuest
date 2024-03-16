@@ -13,6 +13,7 @@ const IntroScreen = () => {
     const realLife = () => {
         navigate('/failedInterview/');
     }
+    
     return (
         <div className="intro-screen">
             <h1>Interview Quest</h1>
