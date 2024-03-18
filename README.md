@@ -21,7 +21,8 @@ Welcome to Interview Quest, a React-based game that simulates the challenging jo
 3. Charm Skills: Unlock and utilize various charm skills during the game, allowing you to influence the interviewer's interest positively. Strategically choose when to use these skills for maximum impact.
 4. Interviewer Personalities: Each interviewer (Recruiter, CTO, CEO) has a distinct personality and preferred interview style.
 5. Visual and Audio Effects: Enhance the gaming experience with graphics and sound effects that complement the mood of each interview round, making the game more immersive.
-6. Just a bit of tounge and cheek: I don't beleive a recruiter would ever yawn, A CTO would scream FizzBuzz at you or CEO's ever stare deep into your soul. 
+6. Just a bit of tounge and cheek: I don't beleive a recruiter would ever yawn, A CTO would scream FizzBuzz at you or CEO's ever stare deep into your soul.
+7. UPDATE: Added a help button to the display, just to break down each stat and component for ease of use.
   
 
 ## Live Demo & Responsivness  
