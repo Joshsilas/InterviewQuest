@@ -49,13 +49,11 @@ const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmS
                     <Button onClick={handleToggleCharmMenu} text={"Back to menu"} disabled={disabled} />
                 </div>
             )}
-
             {!isHelpMenuOpen && !isCharmMenuOpen &&(
                 <div className="helpBarLayout">
                     <Button className="helpBar" text={"Help"} onClick={handleToggleHelpMenu} disabled={disabled}></Button>
                 </div>
             )}
-
             {isHelpMenuOpen && !isBossAttacking &&  (
                 <div className="helpMenu">
                     <p>Your confidence is like your health, if it reaches 0, you fail the interview.</p>
