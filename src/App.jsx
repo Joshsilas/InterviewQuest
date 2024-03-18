@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import IntroScreen from "./Components/IntroScreen/index.jsx"
 import { BrowserRouter, Route, Routes } from "react-router-dom";

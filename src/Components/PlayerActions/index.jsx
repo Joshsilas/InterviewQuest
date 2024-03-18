@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import Button from "../Button/index.jsx";
 import './PlayerActions.css';
 
-const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmSkills, selectedSkill, setSelectedSkill }) => {
+const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmSkills, selectedSkill, setSelectedSkill, engage, charmButton }) => {
     const [isCharmMenuOpen, setIsCharmMenuOpen] = useState(false);
-
+    const [isHelpMenuOpen, setIsHelpMenuOpen] = useState(false);
 
     const handleToggleCharmMenu = () => {
         setIsCharmMenuOpen(!isCharmMenuOpen);
+    };
+
+    const handleToggleHelpMenu = () => {
+        setIsHelpMenuOpen(!isHelpMenuOpen);
     };
 
     const handleAttack = () => {
@@ -23,11 +27,11 @@ const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmS
 
     return (
         <div className="player-actions">
-            {!isCharmMenuOpen && (
-                <>
-                    <Button className={"mainButtons"} onClick={handleAttack} text={"Engage"} disabled={disabled} />
-                    <Button className={"mainButtons"} onClick={handleToggleCharmMenu} text={"Use Charm"} disabled={disabled} />
-                </>
+            {!isCharmMenuOpen && !isHelpMenuOpen &&(
+                <div className="playerButtonsLayout">
+                    <Button className={"engageButton"} onClick={handleAttack} text={"Engage"} disabled={disabled} />
+                    <Button className={"charmButton"} onClick={handleToggleCharmMenu} text={"Use Charm"} disabled={disabled} />
+                </div>
             )}
 
             {isCharmMenuOpen && !isBossAttacking && (
@@ -43,6 +47,22 @@ const PlayerActions = ({ onAttack, onUseSkill, disabled, isBossAttacking, charmS
                         />
                     ))}
                     <Button onClick={handleToggleCharmMenu} text={"Back to menu"} disabled={disabled} />
+                </div>
+            )}
+            {!isHelpMenuOpen && !isCharmMenuOpen &&(
+                <div className="helpBarLayout">
+                    <Button className="helpBar" text={"Help"} onClick={handleToggleHelpMenu} disabled={disabled}></Button>
+                </div>
+            )}
+            {isHelpMenuOpen && !isBossAttacking &&  (
+                <div className="helpMenu">
+                    <p>Your confidence is like your health, if it reaches 0, you fail the interview.</p>
+                    <p>Charm is your special ability points.</p>
+                    <p>Engage will raise the interviewers interest by a small amount without costing any charm. Think of it as your basic attack.</p>
+                    <p>Use Charm will open your special abilities menu. These abilities cost charm to use, so use wisely as you only have a certain amount.</p>
+                    <p>The interviewer will always respond, sometimes positively, sometimes negatively.</p>
+                    <p>Raise their interest to max to pass the interview.</p>
+                    <Button onClick={handleToggleHelpMenu} text={"Close"} disabled={disabled} />
                 </div>
             )}
         </div>

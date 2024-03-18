@@ -2,9 +2,12 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
 }
+h1 {
+    color: white;
+}
 
 .intro-screen {
-    background-color: #f0f0f0;
+    background-color: #222;
     height: 100vh;
     text-align: center;
     color: black;
