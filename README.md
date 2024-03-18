@@ -32,7 +32,7 @@ This game is designed with responsiveness in mind, ensuring an enjoyable experie
 
 Feel free to explore and conquer the interview rounds. Best of luck on your quest!
 
-![image](https://github.com/Joshsilas/InterviewQuest/assets/137796554/268b3761-c3ac-4c38-b915-c2c98292585b)
+![image](https://github.com/Joshsilas/InterviewQuest/assets/137796554/4c1e0818-da3c-4606-bf25-0b527319e91d)
 
 ![image](https://github.com/Joshsilas/InterviewQuest/assets/137796554/48b27f55-fe35-44ac-8a75-709cfb47a812)
 
