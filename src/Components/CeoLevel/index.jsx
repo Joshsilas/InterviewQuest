@@ -236,8 +236,6 @@ const CeoLevel = () => {
                 charmSkills={charmSkills}
                 selectedSkill={selectedSkill}
                 setSelectedSkill={setSelectedSkill}
-                engage={{ description: "Will raise the interviewers interest by 20" }}
-                charmButton={{ description: "Charm abilities menu" }}
             />
         </div>
     );

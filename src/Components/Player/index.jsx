@@ -14,6 +14,7 @@ const Player = ({ onAttack, onUseSkill, health, charm, lockButton, charmSkills, 
                 <h2>{playerName}</h2>
                 <p>Confidence: {health}</p>
                 <p>Charm: {charm}</p>
+
                 <PlayerActions
                     onAttack={onAttack}
                     onUseSkill={handleUseSkill}

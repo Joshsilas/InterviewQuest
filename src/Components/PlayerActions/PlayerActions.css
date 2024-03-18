@@ -11,6 +11,15 @@
     transition: background-color 0.3s;
 }
 
+.playerButtonsLayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.player-actions {
+    display: flex;
+    flex-direction: column;
+}
 .engageButton button:hover {
     background-color: #27ae60;
 }
@@ -19,18 +28,6 @@
     width: 50%;
 }
 
-.charmButton:hover::after {
-    content: attr(data-hover-message);
-    position: absolute;
-    top: 70%;
-    left: 65%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    display: inline-block;
-}
 .charmButton {
     padding: 10px;
     font-size: 16px;
@@ -56,20 +53,6 @@
         transition: background-color 0.3s;
         width: 50%;
     }
-
-.engageButton:hover::after {
-    content: attr(data-hover-message);
-    position: absolute;
-    top: 70%;
-    left: 40%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
 
 .charm-skill-button {
     position: relative;
@@ -100,6 +83,22 @@
 
 .attackButton:hover::after {
     background-color: #2ecc71;
+}
+
+.helpBarLayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.helpBar {
+    display: flex;
+    justify-content: center;
+    background-color: #2ecc71;
+}
+
+.helpBar p {
+    font-weight: bold;
 }
 
 @media (max-width: 1700px) {
